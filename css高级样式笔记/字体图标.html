@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link
+			rel="stylesheet"
+			href="//at.alicdn.com/t/font_2446330_8u5yrlbsmvr.css "
+		/>
+		<!-- 第二种 -->
+		<script
+			src="http://at.alicdn.com/t/font_2446330_8u5yrlbsmvr.js"
+			type="text/javascript"
+			charset="utf-8"
+		></script>
+		<!-- 第三种 -->
+		<style type="text/css">
+			/* @font-face {												第一种
+			  font-family: 'my-iconfont';   project id 2446330 
+			  src: url('//at.alicdn.com/t/font_2446330_8u5yrlbsmvr.eot');
+			  src: url('//at.alicdn.com/t/font_2446330_8u5yrlbsmvr.eot?#iefix') format('embedded-opentype'),
+			  url('//at.alicdn.com/t/font_2446330_8u5yrlbsmvr.woff2') format('woff2'),
+			  url('//at.alicdn.com/t/font_2446330_8u5yrlbsmvr.woff') format('woff'),
+			  url('//at.alicdn.com/t/font_2446330_8u5yrlbsmvr.ttf') format('truetype'),
+			  url('//at.alicdn.com/t/font_2446330_8u5yrlbsmvr.svg#iconfont') format('svg');
+			} */
+			/* .iconfont {
+				font-family: my-iconfont;
+				font-size: 50px;
+			} */
+
+			/* .iconbiaoqing4 {
+				font-size: 100px;
+				color: hotpink;		} */
+			/* 	第一种:加上自定义字体声明:@font-face...如上面,
+												再自己定义一个iconfont的类名,定义样式,最后引用即可,这种方法不推荐,不过这个方法兼容性较好
+					 */
+
+			/*第二种： 字体图标的引用:用link来引入css样式表,之后复制图标的类名
+													然后在标签上加上类:iconfont 和自己复制的那个类名例如
+													class="iconfont iconbiaoqing4" */
+			/* 这种方法维护起来好一点,修改图标只需要更换一下类名即可 */
+
+			/* 第三种:symbol方法,用script导入链接   第三种是主流
+											 1.支持多色图标了，不再受单色限制。
+											 2.通过一些技巧，支持像字体那样，通过font-size,color来调整样式。
+											3. 兼容性较差，支持 ie9+,及现代浏览器。
+											 4.浏览器渲染svg的性能一般，还不如png。*/
+
+			.icon {
+				/* 这是通用的css代码 */
+				width: 1em;
+				height: 1em;
+				vertical-align: -0.15em;
+
+				fill: currentColor;
+				overflow: hidden;
+			}
+			.iconbiaoqing4 {
+				/* 这是为每个字体图标定义的类,可以应用到不同的字体图标 */
+				font-size: 10px; /* 可以在这个类里面或者在icon类里面用font-size来改变图标大小; */
+				color: #3399cc;
+				/* 用阿里的字体图标库的话,如果要追加图标,就需要将图标重新下载过,
+												然后将所有文件全部重新替换即可 */
+			}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<!-- <span class="iconfont iconbiaoqing4"></span> -->
+
+		<!-- <span class="iconfont iconbiaoqing4"></span> -->
+
+		<svg class="icon iconbiaoqing4" aria-hidden="true">
+			<use xlink:href="#iconbiaoqing4"></use>
+			这个链接名称是图标上复制的
+		</svg>
+	</body>
+</html>

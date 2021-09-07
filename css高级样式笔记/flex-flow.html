@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>flex-flow属性</title>
+		<style type="text/css">
+			nav {
+				width: 600px;
+				height: 600px;
+				margin: 100px auto;			
+				display: flex;
+				border: 1px solid red;	/* flex-wrap 该属性控制flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向。 */
+				flex-wrap: wrap;		/* nowrap(默认值)一般用这个： flex容器为单行。该情况下flex子项可能会溢出容器,或者压缩显示
+										wrap： flex容器为多行。该情况下flex子项溢出的部分会被放置到新行，子项内部会发生断行 
+										wrap-reverse(一般不使用)： 反转 wrap 排列。 */ 
+					/* flex-direction: column;
+					flex-wrap: column;两者等于以下这句话 */
+			/* flex-flow: column wrap;(这个属性是flex-direction 和flex-wrap的简写) */
+			}
+			nav div:first-child {
+				width: 200px;
+				height: 200px;
+				background-color: #008000;
+			}
+			nav div:nth-child(2) {
+				width: 200px;
+				background-color: #00FFFF;
+				height: 200px;
+			}
+			nav div:nth-child(3) {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			nav div:last-child {
+				width: 200px;
+				height: 200px;
+				background-color: #Ff0;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</nav>
+	</body>
+</html>

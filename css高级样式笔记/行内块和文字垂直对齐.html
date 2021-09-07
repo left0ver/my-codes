@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>行内和文字垂直居中对齐</title>
+		
+		<style type="text/css">
+			textarea {
+				width: 200px;
+				height: 200px;
+				resize: none;
+				outline: none;
+		/* 让文字和表单在同一水平线只要 */
+				vertical-align: middle;			/* 这个也可以让文字垂直居中对齐,但是对块级元素无效,只对行内块元素和行内元素有效 */
+												/* 这个属性一般用来设置照片(img)和表单元素与文字对齐(即让他们处于同一水平线) */
+												/* 默认的图片会和文字的基线对齐 */
+			}
+			a {
+				height: 300px;
+				width: 300px;
+				display: inline-block;
+				vertical-align: middle;
+				background-color: #008000;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea ></textarea>我是文字
+		<hr >
+		<a href="#">我是文字1</a>
+	</body>
+</html>

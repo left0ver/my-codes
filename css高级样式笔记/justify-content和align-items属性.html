@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>justify-content和align-items属性</title>
+		<style type="text/css">
+			nav {
+				width: 1000px;
+				height: 600px;
+				display: flex;
+				margin: 100px auto;
+				border: 1px solid red;
+				/* 水平对齐 */
+				justify-content: flex-start;  /*(默认的是这种) 让子元素从父元素的开头开始排序,盒子顺序不变*/
+				/* justify-content: flex-end; 	让子元素从父元素的末尾开始排序,但是盒子顺序不变*/
+				/* justify-content: center; 		让子元素在父元素的中间显示*/
+				/* justify-content: space-between;  左右的盒子贴近父盒子，中间的盒子平均分配空白间隙*/
+				/* justify-content: space-around;		相当于给每个盒子都添加一个左右外边距 */
+				/* 垂直对齐 */
+				/* align-items: flex-start; */		/* 顶对齐,与父盒子顶部对齐 */
+				/* align-items: flex-end;	/* 底对齐,与父盒子底部对齐 */ 
+				align-items: center; */			/* 垂直居中对齐
+				/* align-items: stretch; */ 			/* 当子盒子不给高度的情况下,让子元素的高度拉伸,以适用父容器,相当于height: 100%;*/
+			}
+			nav div {
+				width: 250px;
+				height: 200px;
+				
+			}
+			nav div:first-child {
+				background-color: #008000;
+			}
+			nav div:nth-child(2) {
+				background-color: #00FFFF;
+			}
+			nav div:last-child {
+				background-color: #ff0;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div></div>
+			<div></div>
+			<div></div>
+		</nav>
+	</body>
+</html>
