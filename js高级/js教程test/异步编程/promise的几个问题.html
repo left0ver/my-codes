@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// new Promise((resolve, reject) => {
+			// 	reject(1);
+			// })
+			// 	.then(
+			// 		(value) => {
+			// 			console.log("value1", value);
+			// 		},
+			// 		(reason) => {
+			// 			console.log("reason1", reason);
+			// 		}
+			// 	)
+			// 	.then(
+			// 		(value) => {
+			// 			console.log("value2", value);
+			// 		},
+			// 		(reason) => {
+			// 			console.log("reason2", reason);
+			// 		}
+			// 	);
+
+			{
+				new Promise((resolve, reject) => {
+					resolve("zwc");
+					new Promise((resolve1, reject1) => {
+						reject1(2);
+					}).then(
+						(value1) => {
+							console.log("value1", value1);
+						},
+						(reason1) => {
+							console.log("reason", reason1);
+						}
+					);
+				}).then(
+					(value) => {
+						console.log("value", value);
+					},
+					(reason) => {
+						console.log("reason", reason);
+					}
+				);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let [a, b, c] = "bdk";
+			alert([a, b, c]); //bdk
+			alert(a, b, c); //b
+			alert(b); //d
+			{
+				let user = {
+					name: "John",
+					age: 30,
+				};
+
+				for (let [key, value] of Object.entries(user)) {
+					alert(`key:${key},value:${value}`);
+				}
+			}
+
+			//交换数组中的两个值
+			{
+				let arr = [1, 6, 4];
+				let [a, b, c] = arr;
+				[b, a] = [a, b];
+				console.log([a, b, c]);
+			}
+			//任务1
+			{
+				let user = {
+					name: "John",
+					years: 30,
+				};
+				let { name, years: age, isAdmin = true } = user;
+				alert(name); // John
+				alert(age); // 30
+				alert(isAdmin); // false
+			}
+			//任务2
+			{
+				let salaries = {
+					John: 100,
+					Pete: 300,
+					Mary: 250,
+				};
+
+				alert(topSalary(salaries));
+				function topSalary(obj = null) {
+					let max = 0;
+					// let map = new Map();
+					for (let [name, sum] of Object.entries(obj)) {
+						max = Math.max(max, sum);
+						// map.set(name, sum);
+					}
+					for (let item of Object.keys(obj)) {
+						if (obj[item] === max) return item;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

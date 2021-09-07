@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<script>
+			"use strict";
+			{
+				function sum(a) {
+					return function (b) {
+						return a + b;
+					};
+				}
+				alert(sum(2)(5));
+			}
+
+			// {
+			// 	let x = 1;
+
+			// 	function func() {
+			// 		console.log(x); // ? 会报错
+
+			// 		let x = 2;
+			// 	}
+
+			// 	func();
+			// }
+
+			//任务8
+			{
+				function inBetween(a, b) {
+					return function (x) {
+						return x >= a && x <= b;
+					};
+				}
+				function inArray(arr) {
+					return function (x) {
+						return arr.includes(x);
+					};
+				}
+				let arr = [1, 2, 3, 4, 5, 6, 7];
+
+				alert(arr.filter(inBetween(3, 6))); // 3,4,5,6
+
+				alert(arr.filter(inArray([1, 2, 10]))); // 1,2
+			}
+
+			//任务9
+			{
+				let users = [
+					{ name: "John", age: 20, surname: "Johnson" },
+					{ name: "Pete", age: 18, surname: "Peterson" },
+					{ name: "Ann", age: 19, surname: "Hathaway" },
+				];
+				function byField(fieldName) {
+					return (a, b) => (a[fieldName] > b[fieldName] ? 1 : -1);
+				}
+				users.sort(byField("name"));
+				// users.sort(byField("age"));
+				console.log(users);
+			}
+
+			//任务10
+			{
+				function makeArmy() {
+					let shooters = [];
+
+					let i = 0;
+					while (i < 10) {
+						let index = i;
+						let shooter = function () {
+							// 创建一个 shooter 函数，
+							alert(index); // 应该显示其编号
+						};
+						shooters.push(shooter); // 将此 shooter 函数添加到数组中
+						i++;
+					}
+
+					// ……返回 shooters 数组
+					return shooters;
+				}
+
+				let army = makeArmy();
+
+				// ……所有的 shooter 显示的都是 10，而不是它们的编号 0, 1, 2, 3...
+				army[0](); // 编号为 0 的 shooter 显示的是 10
+				army[1](); // 编号为 1 的 shooter 显示的是 10
+				army[2](); // 10，其他的也是这样。
+			}
+		</script>
+	</body>
+</html>

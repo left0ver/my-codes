@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>tab栏制作</title>
+		<script
+			src="http://at.alicdn.com/t/font_2446330_13v43btkyx5.js"
+			type="text/javascript"
+			charset="utf-8"
+		></script>
+		<style type="text/css">
+			* {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.icon {
+				width: 1em;
+				height: 1em;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+			.shanchu1 {
+				font-size: 12px;
+			}
+			.tab {
+				width: 700px;
+				border: 1px solid red;
+				margin: 0 auto;
+			}
+			nav {
+				width: 100%;
+				height: 50px;
+				/* border: 1px solid gray; */
+			}
+			ul {
+				/* border: 1px solid gray; */
+			}
+			ul li {
+				width: 100px;
+				height: 50px;
+				position: relative;
+				float: left;
+				border-right: 1px solid gray;
+				border-bottom: 1px solid gray;
+				text-align: center;
+				line-height: 50px;
+			}
+			.delete {
+				position: absolute;
+				right: 0px;
+				top: -22px;
+			}
+			#create {
+				position: relative;
+				width: 100%;
+			}
+			.create {
+				position: absolute;
+				right: 8px;
+				top: 13px;
+			}
+			section {
+				width: 100%;
+				height: 300px;
+				display: none;
+			}
+			.conactive {
+				display: block;
+			}
+			.current {
+				border-bottom: 0;
+			}
+			input {
+				width: 70px;
+				height: 35px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tab" id="tab">
+			<nav>
+				<ul>
+					<li class="current">
+						<span>测试1</span>
+						<span class="delete"
+							><svg class="icon shanchu1" aria-hidden="true">
+								<use xlink:href="#iconshanchu1"></use>
+							</svg>
+						</span>
+					</li>
+					<li>
+						<span>测试2</span>
+						<span class="delete"
+							><svg class="icon shanchu1" aria-hidden="true">
+								<use xlink:href="#iconshanchu1"></use>
+							</svg>
+						</span>
+					</li>
+					<li>
+						<span>测试3</span>
+						<span class="delete"
+							><svg class="icon shanchu1" aria-hidden="true">
+								<use xlink:href="#iconshanchu1"></use>
+							</svg>
+						</span>
+					</li>
+				</ul>
+				<div id="create" class="tabadd">
+					<span class="create">+</span>
+				</div>
+			</nav>
+			<div class="tabscon">
+				<section class="conactive">测试1</section>
+				<section>测试2</section>
+				<section>测试3</section>
+			</div>
+		</div>
+		<script src="tab栏切换.js"></script>
+	</body>
+</html>

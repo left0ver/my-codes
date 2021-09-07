@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//任务1
+			{
+				let date = new Date(Date.parse("2012-02-20 03:12:00"));
+				alert(date);
+			}
+
+			//任务2
+			{
+				let date = new Date(2012, 0, 3); // 3 Jan 2012
+
+				alert(getWeekDay(date)); // 应该输出 "TU"
+				function getWeekDay(day) {
+					let nowDay = day.getDay();
+
+					switch (
+						nowDay //可以用数组
+					) {
+						case 0:
+							return "SU";
+						case 1:
+							return "MO";
+						case 2:
+							return "TU";
+						case 3:
+							return "WE";
+						case 4:
+							return "TH";
+						case 5:
+							return "FR";
+						case 6:
+							return "SA";
+					}
+				}
+			}
+
+			//任务4
+			// {
+			// 	function getDateAgo(date, days) {
+			// 		let dateCopy = new Date(date);
+
+			// 		dateCopy.setDate(date.getDate() - days);
+			// 		return dateCopy.getDate();
+			// 	}
+
+			// 	let date = Date(2015, 0, 2);
+
+			// 	alert(getDateAgo(date, 1)); // 1, (1 Jan 2015)
+			// 	alert(getDateAgo(date, 2)); // 31, (31 Dec 2014)
+			// 	alert(getDateAgo(date, 365)); // 2, (2 Jan 2014)
+			// }
+			//任务5
+			{
+				let arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+				function getLastDayOfMonth(year, month) {
+					if (
+						((year % 4 === 0 && year % 100 !== 0) ||
+							year % 400 === 0) &&
+						month === 1
+					) {
+						return arr[1] + 1;
+					}
+					return arr[mouth];
+				}
+				alert(getLastDayOfMonth(2012, 1));
+			}
+		</script>
+	</body>
+</html>

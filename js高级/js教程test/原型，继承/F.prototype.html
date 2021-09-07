@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//任务1
+			{
+				function Rabbit() {}
+				Rabbit.prototype = {
+					eats: true,
+				};
+
+				let rabbit = new Rabbit();
+
+				Rabbit.prototype = {};
+				let rabbit1 = new Rabbit();
+				alert(rabbit.eats); // ?
+				alert(rabbit1.eats);
+			}
+
+			//任务2
+			{
+				function User(name, age) {
+					this.name = name;
+					this.age = age;
+				}
+				let user = new User("zcw", 18);
+				let user1 = new user.constructor("zwc", 20);
+				alert(user1.age);
+
+				function User1(name, age) {
+					this.name = name;
+					this.age = age;
+				}
+				User1.prototype = {};
+				let user2 = new User1("zcw", 18);
+				let user3 = new user2.constructor("zwc", 30);
+				// console.log(user2.constructor);
+				alert(user3.age);
+			}
+		</script>
+	</body>
+</html>

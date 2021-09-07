@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let arr = ["kk", "jgjga", "156"];
+			//1.arr.splice（）该方法可以实现数组的删除，添加，插入
+			var arr1 = arr.splice(0, 2);
+
+			// splice(start，count,elem1,elem2,elem3....) 从start位置开始，删除count个元素,并用给定的元素替换他
+			console.log(arr1); //["kk", "jgjga"]  //arr.splice()方法以数组的形式返回被删除的元素
+			//删除
+			console.log(arr); //["156"]
+			//添加
+			arr.splice(1, 0, "zwc"); //在末尾添加
+			arr.splice(0, 0, "hello"); //在开头添加
+			console.log(arr1);
+			console.log(arr);
+			//插入
+			arr.splice(1, 0, "zwc2"); //在位置为1的地方插入
+			console.log(arr1);
+			console.log(arr); //["hello", "zwc2", "156", "zwc"]
+
+			//2. arr.slice(start,last) 复制索引[start,last)的元素到一个新数组中，并返回这个新数组
+			let arr2 = arr.slice(1, 3);
+			console.log(arr2); // ["zwc2", "156"]
+
+			//3.遍历数组，arr.forEach(function)//里面的参数是一个函数
+			arr2.forEach((item) => console.log(item)); //zwc2 156
+			for (let i in arr2) {
+				console.log(i); //0,1
+				console.log(arr2[i]); //zwc2 156
+			}
+			console.log(arr2.includes("156")); //arr.includes(elem)，查找数组中是否包含某个元素，这里是严格意义上的===
+			//4.find（方法）
+			/*let result = arr.find(function(item, index, array) {
+			 如果返回 true，则返回 item 并停止迭代
+			 对于假值（falsy）的情况，则返回 undefined
+			});*/
+
+			let result = arr.find((item) => item === 156);
+			console.log(result); //undefined
+
+			/*
+			 5. find 方法搜索的是使函数返回 true 的第一个（单个）元素。
+			如果需要匹配的有很多，我们可以使用 arr.filter(fn)。
+			语法与 find 大致相同，但是 filter 返回的是所有匹配元素组成的数组：
+			         */
+
+			alert("bac".localeCompare("bad")); //字符串的比较，一般都用这个方法比较，小于返回-1，等于返回0，大于返回1
+			alert("bad".codePointAt(1)); //查看字符串某个位置的字符代码值
+			//6.数组的排序，元素是字符串的排序，一般用str.localeCompare()方法
+			//该排序是原位排序，不创建新的数组
+			alert(arr2.sort((item1, item2) => item1.localeCompare(item2)));
+
+			//7.str.split(delim) 方法可以做到。它通过给定的分隔符 delim 将字符串分割成一个数组。该方法返回一个数组
+			let str1 = "hello,zwi";
+			console.log(str1.split(","));
+			//8.arr.join(delim), 将数组以指定的符号连接成字符串
+			console.log([1, 5, 6].join("&"));
+		</script>
+	</body>
+</html>

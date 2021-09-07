@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			class User {
+				static sum(a, b) {
+					return a + b;
+				}
+			}
+			let user1 = new User();
+			// alert(user1.sum(1, 8)); //错误，静态方法只能通过类名调用
+			alert(User.sum(1, 3));
+
+			{
+				class Rabbit {
+					constructor(name) {
+						this.name = name;
+					}
+				}
+
+				let rabbit = new Rabbit("Rab");
+
+				// hasOwnProperty 方法来自于 Object.prototype
+				alert(rabbit.hasOwnProperty("name")); // true
+			}
+			{
+				class Rabbit extends Object {
+					constructor(name) {
+						super();
+						this.name = name;
+					}
+				}
+
+				let rabbit = new Rabbit("Rab");
+
+				alert(rabbit.hasOwnProperty("name")); // Error
+			}
+		</script>
+	</body>
+</html>

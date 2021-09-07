@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//任务1
+			{
+				function sumTo1(n) {
+					let sum = 0;
+					for (let i = 1; i <= n; i++) {
+						sum += i;
+					}
+					return sum;
+				}
+				alert(sumTo1(6));
+				function sumTo2(n) {
+					if (n == 1) return n;
+					return n + sumTo2(n - 1);
+				}
+				alert(sumTo2(3));
+
+				function sumTo3(n) {
+					return ((1 + n) * n) / 2;
+				}
+				alert(sumTo3(5));
+			}
+
+			//任务2
+			{
+				function factorial(n) {
+					if (n == 1 || n == 0) {
+						return 1;
+					}
+					return n * factorial(n - 1);
+				}
+				alert(factorial(5));
+			}
+
+			//任务3
+			{
+				function fib(n) {
+					if (n === 1 || n === 2) {
+						return 1;
+					}
+					return fib(n - 1) + fib(n - 2);
+				}
+				alert(fib(3)); // 2
+				alert(fib(7)); // 13
+				// alert(fib(77)); // 5527939700884757
+			}
+			//任务4
+			{
+				let list = {
+					value: 1,
+					next: {
+						value: 2,
+						next: {
+							value: 3,
+							next: {
+								value: 4,
+								next: null,
+							},
+						},
+					},
+				};
+
+				function printList(list) {
+					if (list.next === null) {
+						alert(list.value);
+					} else {
+						alert(list.value);
+						return printList(list.next);
+					}
+				}
+				printList(list);
+
+				function printList1(list) {
+					do {
+						alert(list.value);
+						return printList(list.next);
+					} while (list.next);
+				}
+				printList1(list);
+			}
+
+			//任务5
+			{
+				let list = {
+					value: 1,
+					next: {
+						value: 2,
+						next: {
+							value: 3,
+							next: {
+								value: 4,
+								next: null,
+							},
+						},
+					},
+				};
+				function printList(list) {
+					if (list.next) {
+						printList(list.next);
+					}
+					console.log(list.value);
+				}
+				printList(list);
+			}
+		</script>
+	</body>
+</html>

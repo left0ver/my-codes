@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<table id="grid">
+			<thead>
+				<tr>
+					<th data-type="number">Age</th>
+					<th data-type="string">Name</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>5</td>
+					<td>John</td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Ann</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			let thead = document.querySelector("thead");
+			thead.addEventListener("click", function (event) {
+				let dataSet = event.target.dataSet.type;
+				if (!dataSet) {
+					return;
+				} else if (dataSet == "number") {
+				} else if (dataSet == "string") {
+				}
+			});
+		</script>
+	</body>
+</html>

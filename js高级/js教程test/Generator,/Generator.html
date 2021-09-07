@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// function* f1(n) {
+			// 	for (let i = 0; i < n; i++) {
+			// 		yield "hhh";
+			// 	}
+			// }
+			// function* f() {
+			// 	yield* f1(5);
+			// 	yield* f1(10);
+			// 	yield* f1(7);
+			// }
+			// for (const item of f1(6)) {
+			// 	alert(item);
+			// }
+			async function* f2() {
+				await new Promise((reslove) => setTimeout(reslove, 1000));
+				yield 1;
+				yield 5;
+			}
+			(async () => {
+				let g = f2();
+				console.log(await g.next());
+			})();
+			//任务1
+			// {
+			// 	function* pseudoRandom(seed) {
+			// 		let previous = seed;
+			// 		for (let i = 0; i < 5; i++) {
+			// 			previous = (previous * 16807) % 2147483647;
+			// 			yield previous;
+			// 		}
+			// 	}
+			// 	let generator = pseudoRandom(1);
+			// 	alert(generator.next().value);
+			// 	alert(generator.next().value);
+			// 	alert(generator.next().value);
+			// }
+		</script>
+	</body>
+</html>

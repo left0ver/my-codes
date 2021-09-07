@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			{
+				class Button {
+					constructor(value) {
+						this.value = value;
+					}
+
+					click() {
+						alert(this.value);
+					}
+				}
+
+				let button = new Button("hello");
+				// button.click();
+				setTimeout(() => button.click(), 1000); // undefined
+			}
+
+			// 任务1
+
+			// {
+			// 	function Clock({ template }) {
+			// 		let timer;
+
+			// 		function render() {
+			// 			let date = new Date();
+
+			// 			let hours = date.getHours();
+			// 			if (hours < 10) hours = "0" + hours;
+
+			// 			let mins = date.getMinutes();
+			// 			if (mins < 10) mins = "0" + mins;
+
+			// 			let secs = date.getSeconds();
+			// 			if (secs < 10) secs = "0" + secs;
+			// 		}
+
+			// 		this.stop = function () {
+			// 			clearInterval(timer);
+			// 		};
+
+			// 		this.start = function () {
+			// 			render();
+			// 			timer = setInterval(render, 1000);
+			// 		};
+			// 	}
+
+			// 	let clock = new Clock({ template: "h:m:s" });
+			// 	clock.start();
+			// }
+			{
+				class Clock {
+					constructor({ template }) {
+						this.start();
+						this.startTime = Date.now();
+					}
+					render() {
+						this.date = new Date();
+						if (this.date - this.startTime > 10000) this.stop();
+						this.hours = this.date.getHours();
+						if (this.hours < 10) this.hours = "0" + this.hours;
+
+						this.mins = this.date.getMinutes();
+						if (this.mins < 10) this.mins = "0" + this.mins;
+
+						this.secs = this.date.getSeconds();
+						if (this.secs < 10) this.secs = "0" + this.secs;
+						this.output = this.template
+							.replace("h", hours)
+							.replace("m", mins)
+							.replace("s", secs);
+
+						console.log(output);
+					}
+
+					stop() {
+						clearInterval(timer);
+					}
+					start() {
+						this.render();
+						this.timer = setInterval(render, 1000);
+					}
+				}
+				let clock = new Clock({ template: "h:m:s" });
+			}
+		</script>
+	</body>
+</html>
