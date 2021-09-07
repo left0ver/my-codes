@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+/* p {
+	color: #0000FF;
+} */
+#weiguo {
+	font-size: 30px;
+}
+.cc {
+	border: 1px solid #FF0000;
+}
+dd li {
+	text-decoration: underline;
+}
+dd > li {
+	
+}
+p:last-of-type,
+div {
+	color: rgba(0,255,255,0.5);
+}
+table:hover {
+	background-color: #008000;
+	border: 1px solid #00ffff;
+}
+#circle {
+	width: 200px;
+	height: 100px;
+	/* border: 40px solid red; */
+	border-radius: 1px 0px 0px 0px;
+	background-color: #008000;
+}
+/* 叶子 */
+#B {
+	width: 200px;
+	height: 200px;
+	background-color: #008000;
+	border-radius: 200px 0px 200px 0px;
+}
+/* 4/1个圆 */
+#C {
+	width: 200px;
+	height: 200px;
+	background-color: #0077AA;
+	border-top-left-radius: 200px;
+}
+/* 圆 */
+#D {
+		width: 200px;
+		height: 200px;
+		background-color: #0077AA;
+		border-radius: 50%;
+	}

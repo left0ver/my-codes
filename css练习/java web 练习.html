@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8">
+		<title>java web 练习</title>
+		<link rel="stylesheet" href="Java%20web%20练习.css" type="text/css">
+		<style>
+			
+			
+		</style>
+		<script>
+			var emailobj;
+			var emailMsg;
+			window.onload=function() {
+				emailObj=document.getElementById("email")
+				emailMsg=document.getElementById("emailMsg")
+			}
+			function checkEmail() {			// 验证邮箱
+				var regex = /^[\w-]+@([\w-]+\.)+[a-zA-Z]{2,4}$/;
+				var value =emailObj.value;
+				var msg = "";
+				if (!value)
+					msg = "邮箱必须填写：";
+				else if (!regex.test(value))
+					msg = "邮箱格式不合法：";
+				emailMsg.innerHTML = msg;
+				emailObj.parentNode.parentNode.style.color = msg == "" ? "black" : "red";
+				return msg == "";
+			}
+			function checkForm(){
+																	/
+				var bEmail=checkEmail();
+				return bEmail;
+			}
+
+		</script>
+	</head>
+	<body>
+		<form action="#" method="post" target="_blank" onSubmit="return checkForm();"> <!-- 只有onsubmit为true时才会跳转 -->
+		<table align="center">
+		
+		<tr>
+			<td>用户名 </td>
+			<td> <input type="text"  id= "email" name="username"/> <span id="emailMsg"> </span></td>
+		</tr>
+		<tr>
+			<td>密码 </td>
+			<td><input type="password" name="123456"/></td>
+		</tr>
+		<tr>
+			<td>性别 </td>
+			<td><input type="radio" name="sex" value="male" />男	
+			<input type="radio" name="sex" value="female" />女</td>
+		</tr>
+		<tr>
+			<td>兴趣 </td>
+			<td><input type="checkbox" name="interest" value="film" /> 看电影
+			<input type="checkbox" name="interest" value="code" /> 敲代码
+			<input type="checkbox" name="interest" value="game" /> 玩游戏</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center"> <input type="submit" value="注册"/>
+			<input type="reset" value="重置"/> </td>
+		</tr>
+		</table>
+		</form>
+		
+	</body>
+</html>
