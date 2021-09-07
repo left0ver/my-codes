@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title></title>
+	</head>
+	<body>
+		<!-- beforebegin -->
+		插入到父元素前面
+		<p>
+			<!-- afterbegin -->
+			插入到子元素的最前面 foo
+			<!-- beforeend -->插入到子元素的最后面
+		</p>
+		<!-- afterend -->
+		插入到父元素的后面
+		<ul>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<script>
+			var ul = document.querySelector("ul");
+			var li = "<li></li>";
+			/*
+        element.insertAdjacentHTML(position, text);
+        appendChild方法只能不能添加含有字符串的变量，只能先创建一个元素，再添加，内容的话得再用innHTML添加，上面的方法更好
+        */
+			ul.insertAdjacentHTML("beforeend", li);
+			ul.insertAdjacentHTML("beforebegin", li);
+			ul.insertAdjacentHTML("afterend", li);
+			ul.insertAdjacentHTML("afterbegin", li);
+		</script>
+	</body>
+</html>

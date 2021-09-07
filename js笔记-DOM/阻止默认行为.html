@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>阻止默认行为</title>
+	</head>
+	<body>
+		<a href="http://www.lanyangyang.ltd">我的网站</a>
+		<script>
+			var a = document.querySelector("a");
+			a.addEventListener("click", function (e) {
+				//阻止默认行为(事件),即让链接不跳转，让表单不提交
+				e.preventDefault(); //这是一个方法，所以要加小括号  ie678不支持  (这种用的多，标准)
+				//e.returnValue = false; //低版本浏览器 IE678  returnValue是个属性
+				// return false; //这种方法没有兼容性问题，但是return 后面的代码不会执行了，所以一般不用这种
+			});
+		</script>
+	</body>
+</html>

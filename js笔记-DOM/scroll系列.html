@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>scroll系列</title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				border: 10px solid red;
+				/* overflow: auto; */
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容
+		</div>
+		<script>
+			/*
+			element.scrollTop;  当加入滚动条之后，被卷去的高度，即往下拖动滚动条内容会往上走，即上面的下边框到最上面内容的高度
+			element.scrollLeft; 当加入滚动条之后，被卷去的宽度，即往右拖动滚动条内容会往上左，即左面的右边框到最右面内容的宽度
+
+				**上面这两个用的多一点
+				onscroll 当拖动滚动条时触发的操作
+
+			element.scrollWidth;  返回被卷去的宽度 ，不包含边框，返回的数值不带单位，即内容的宽度，内容的宽度没超过盒子的宽度，就显示盒子的宽度，否则显示内容的宽度，即左边的右边框到最右边内容的宽度
+			element.scrollHeight; 返回被卷去的高度，不包含边框，返回的数值不带单位  即内容的高度，内容的高度没超过盒子的高度，就显示盒子的高度，否则显示内容的高度，即上面的下边框到最底下内容的高度
+            */
+			var div = document.querySelector("div");
+			console.log(div.scrollWidth);
+			console.log(div.scrollHeight);
+			div.addEventListener("scroll", function () {
+				console.log(div.scrollTop);
+			});
+			console.log(div.scrollTop);
+			console.log(div.scrollLeft);
+		</script>
+	</body>
+</html>

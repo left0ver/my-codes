@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>修改元素内容</title>
+	</head>
+	<body>
+		<button id="but">更换内容</button>
+		<div>九阿哥</div>
+		<p>
+			案件噶会计估计
+			<span>啊距噶结果</span>
+		</p>
+		<script>
+			var but = document.querySelector("#but");
+			var div = document.querySelector("div");
+			but.onclick = function () {
+				//div.innerText = "hello"; //E.innerText='字符串'  将元素E里面的内容改为等号后面的  ，不能识别html标签
+				div.innerHTML = "<strong>HEee</strong>ooo"; //E.innerHTML可以识别里面的html标签，如左边，可以将字体加粗等等
+				// 这两个方法都可以读取或者修改里面的内容
+			};
+			// 但是E.innerText方法读取内容的时候会把里面的html标签，空格和换行给清除   如下：
+			// E.innerHTML方法读取内容的时候会保留里面的html标签,保留空格和换行;W3c标准
+			//以后一般用E.innerHTML
+			var p1 = document.querySelector("p");
+			console.log(p1.innerText);
+			console.log(p1.innerHTML);
+		</script>
+	</body>
+</html>

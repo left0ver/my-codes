@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="box"></div>
+		<div class="box"></div>
+		<li></li>
+		<li></li>
+		<li></li>
+		<script>
+			//这些选择元素的方法都是H5新增的，ie9以下不兼容
+			// 1.通过类名来获取元素
+			var box1 = document.getElementsByClassName("box"); //返回的是个数组
+			console.log(box1);
+			//2.返回指定选择器的第一个元素 ；返回的是个元素对象
+			var box2 = document.querySelector(".box"); //必须指定是什么选择器，类名就加.  id名就加#
+			console.log(box2);
+			var box3 = document.querySelector("li"); //如果获取标签，就不用加
+			console.log(box3);
+			//3.返回指定选择器的所有元素  ；与上面不同的是，这个是返回的是所有元素
+			var box4 = document.querySelectorAll(".box"); //返回的是个数组
+			console.log(box4);
+		</script>
+	</body>
+</html>

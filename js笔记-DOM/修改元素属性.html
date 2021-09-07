@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>修改元素属性</title>
+	</head>
+	<body>
+		<img src="../img/index_ad1.jpg" />
+		<button>xiugai</button>
+		<script>
+			var change = document.querySelector("button");
+			var photo = document.querySelector("img");
+			change.onclick = function () {
+				photo.src = "../img/index_ad4.jpg"; //修改元素的src属性
+				photo.title = "zwc"; //修改元素的title属性
+				// 修改其他的属性的方法也类似 href
+			};
+		</script>
+	</body>
+</html>

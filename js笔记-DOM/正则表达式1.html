@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>正则表达式</title>
+	</head>
+	<body>
+		<script>
+			//var 变量名 = new RegExp("正则表达式"，"匹配模式");
+			//  匹配模式：i  / g
+			//   i 忽略大小写
+			//   g 全局匹配，区分大小写
+			var reg = new RegExp("[a-zA-Z]");
+			//test()方法，括号里面的参数是字符串;可以检查一个字符串是否符合该正则表达式
+			//符合返回true，否则返回false
+
+			/*第二种:面量创建正则表达式
+            var 变量名=/正则表达式/匹配模式
+             var reg = /a/i ; */
+			/*语法：
+			//
+			a | b | c = [abc];
+            [a-z]任意小写字母
+            [A-Z]任意大写字母
+            [a-zA-Z]任意字母
+            [A-z]不能表示任意字母，因为这中间还有一些其他字符
+            [^ ab] 除了ab以外的都行  [^ ]除了
+            [0-9] 任意数字
+			
+
+
+            */
+			var result = reg.test("c");
+
+			console.log(result);
+			/*
+		
+		split()方法是将字符串拆分成数组
+		里面的参数可以传递一个正则表达式
+			如下：
+
+		*/
+			var str = "1a2b3c";
+			var arr = str.split(/[A-Za-z]/); //不需要加‘’号
+			console.log(arr);
+
+			/*查找目标字符串，返回查找到的字符串的第一个索引，否则返回-1
+			str.search()
+			//里面的参数也可以传正则表达式
+			如下：
+
+			*/
+			var str1 = "hello abc hello aec";
+			var result1 = str1.search("abc"); //查找是否含有abc	返回第一个查找到的索引，否则返回-1
+			var result2 = str1.search(/a[be]c/); //里面的参数也可以传正则表达式
+			console.log(result1);
+			console.log(result2);
+			/*
+			match（） 可以根据正则表达式将，从一个字符串中将符合条件的内容提取出来
+			默认情况下，match（）只会将符合条件的第一个内容提取出来，
+			要想将所有内容提取出来，只需要将匹配模式改为g
+			可以有多个匹配模式，即 gi或ig 既不忽略大小写，又全局匹配	
+			*/
+			var str3 = "1a2b3c";
+			var result3 = str3.match(/[a-zA-Z]/g);
+			console.log(result3);
+			var result4 = str3.match(/[A-Z]/gi);
+			console.log(result4);
+			console.log(typeof result4);
+			console.log(Array.isArray(result4));
+
+			/*
+				replace()	
+				可以将字符串的内容替换成新内容		
+				默认只会替换符合条件的第一个
+				第一个参数可以接受一个正则表达式
+
+			*/
+			var str4 = "1a2b3ca";
+			var result5 = str4.replace("a", "@"); //将第一个a替换成@
+			var result6 = str4.replace(/a/g, "@"); //将所有的a替换成@
+			console.log(result5);
+			console.log(result6);
+		</script>
+	</body>
+</html>

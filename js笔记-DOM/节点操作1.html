@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<strong>hi</strong>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			<span>hello</span>
+		</div>
+		<script>
+			// 元素节点的nodeType是1;
+			// 属性节点的nodeType是2;
+			// 文本节点的nodeType是3;
+			var ul = document.querySelector("ul");
+			// ul.parentNode 获取父节点，获取的是离自己最近的父节点
+			console.log(ul.parentNode);
+			// ul.childNodes  获取所有的子节点，包括文本节点，返回的是一个数组
+			// 由于这个文本节点也获取过来,所以一般不用这种方法
+			console.log(ul.childNodes);
+
+			// ul.children  获取所有的子元素节点，一般用这个
+			console.log(ul.children);
+			//ul.firstChild  获取第一个节点，文本节点也获取
+			console.log(ul.firstChild);
+			//ul.lastChild  获取最后一个节点，文本节点也获取
+			console.log(ul.lastChild);
+
+			// ul.firstElementChild 获取第一个元素节点(这种方法有兼容性问题，ie9以上才支持)
+			console.log(ul.firstElementChild);
+			// ul.firstElementChild 获取最后一个元素节点(这种方法有兼容性问题，ie9以上才支持)
+			console.log(ul.lastElementChild);
+			// 实际开发中一般用下面这种		没有兼容性问题
+			console.log(ul.children[0]); //用ul.children[] 来获取第几个元素
+			console.log(ul.children[ul.children.length - 1]);
+
+			//获取兄弟节点
+			// Element.nextSibling  获取下一个兄弟节点，包括元素节点，文本节点
+			console.log(ul.nextSibling); //这里会获取到文本节点
+			// Element.nextSibling  获取上一个兄弟节点，包括元素节点，文本节点
+			console.log(ul.previousSibling); //这里会获取到文本节点
+
+			//获取兄弟元素节点	(ie9以上才支持)
+			// Element.nextElementSibling 获取下一个兄弟节点 ，专门获取元素节点
+			console.log(ul.nextElementSibling);
+			// Element.nextElementSibling 获取上一个兄弟节点 ，专门获取元素节点
+			console.log(ul.previousElementSibling);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>注册监听事件</title>
+	</head>
+	<body>
+		<button>11</button>
+		<button>222</button>
+		<script>
+			var buts = document.querySelectorAll("button");
+			buts[0].onclick = function () {
+				//传统的添加事件方法，事件的唯一性，即只能添加一个事件，后面添加的事件会覆盖前面的
+				alert("11");
+			};
+			buts[0].onclick = function () {
+				alert("22");
+			};
+			//添加监听器的方法，ie9以上才兼容 Element.addEventListener(事件类型，事件处理程序)事件类型是字符串，不加on
+			//同一个元素，同一个事件可以添加多个监听器，
+			buts[1].addEventListener("click", function () {
+				alert("99");
+			});
+			buts[1].addEventListener("click", function () {
+				alert("100");
+			});
+		</script>
+	</body>
+</html>

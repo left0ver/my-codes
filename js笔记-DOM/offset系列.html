@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.father {
+				width: 200px;
+				height: 200px;
+				margin: 100px;
+				background-color: red;
+				position: relative;
+			}
+			.son {
+				width: 50px;
+				height: 50px;
+				margin-left: 45px;
+				background-color: #ff0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<script>
+			var father = document.querySelector(".father");
+			var son = document.querySelector(".son");
+			console.log(father.offsetTop);
+			console.log(father.offsetLeft);
+			//返回元素相对带有定位的父亲的左边框偏移量 ,若所有的父亲都没定位，则以body为准，返回数值不带单位
+			console.log(son.offsetLeft);
+			//返回元素相对带有定位的父亲的上边框偏移量,若所有的父亲都没定位，则以body为准，返回数值不带单位
+			console.log(son.offsetTop);
+			//返回元素的宽度，总宽度，包含padding，和border，返回的数值不带单位
+			console.log(son.offsetWidth);
+			//返回元素的高度，总高度，包含padding，和border，返回的数值不带单位
+			console.log(son.offsetHeight);
+			//offsetParent:  返回最近一级带定位的父亲
+			console.log(son.offsetParent);
+
+			/*
+            offset和style 的区别
+            如果只想获取元素的大小位置，offset更合适   如果要更改元素的值，style更合适
+            offset可以获取任意样式表的样式值，  style只能获取行内样式表的样式值
+            offsetWidth 获取的值包含padding 和border ，而style获取的widt不包含
+            offset 获得的数值没单位，style有，返回的是字符串
+            offsetWidth 是只读属性，不能赋值，而style.width可以赋值，也可以获取
+            */
+		</script>
+	</body>
+</html>

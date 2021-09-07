@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>键盘事件</title>
+	</head>
+	<body>
+		<script>
+			// onkeyup 按下键盘，松开时触发
+			// onkeydown   按下的时候触发   //如果一直按住，会一直触发
+			// onkeypress  按下的时候触发  不识别ctrl shift 左右箭头等功能键  //如果一直按住，会一直触发
+			document.addEventListener("keyup", function (e) {
+				console.log("我弹起了");
+			});
+			document.addEventListener("keypress", function (e) {
+				console.log("我按下了press");
+			});
+			document.addEventListener("keydown", function (e) {
+				console.log("我按下了down");
+			});
+			//这三个执行的顺序：down press  up
+			//down一定会在press前执行，不论代码顺序
+		</script>
+	</body>
+</html>

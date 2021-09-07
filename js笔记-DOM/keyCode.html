@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>keyCode</title>
+	</head>
+	<body>
+		<script>
+			// keypress 事件用keyCode方法获得的字母是区分大小写的，keyup和keydown不区分大小写
+			// 实际中keyup和keydown用的多，因为他们识别功能键
+			document.addEventListener("keypress", function (e) {
+				console.log("press:" + e.keyCode); //按a 得到的是97
+			});
+			document.addEventListener("keyup", function (e) {
+				console.log("up:" + e.keyCode); //按a 得到的是65 不区分大小写
+			});
+			document.addEventListener("keydown", function (e) {
+				console.log("down:" + e.keyCode); //按a 得到的是65  不区分大小写
+			});
+		</script>
+	</body>
+</html>

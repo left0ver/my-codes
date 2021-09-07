@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<ul>
+			<li>21</li>
+			<li>45</li>
+			<li>33</li>
+			<li>77</li>
+		</ul>
+		<ol id="ol">
+			<li>agj</li>
+			<li>gj</li>
+			<li>gja</li>
+			<li>aaf</li>
+		</ol>
+		<script>
+			//  获取页面上所有的li
+			// document.getElementsByTagName('li')//该方法返回的是一个伪数组，当页面上没有li这个元素时，返回空数组
+			var li = document.getElementsByTagName("li");
+			console.log(li);
+			//获取某个标签下的所有元素;例如获取ol下所有的li
+			//第一种
+			var ol = document.getElementsByTagName("ol");
+			var li1 = ol[0].getElementsByTagName("li"); //因为返回的ol是个数组，这里一定要给数组ol价格索引，即ol[0]
+			console.log(li1);
+			//第二种    给父元素设置个id 先获取父元素，再通过父元素来获取子元素
+			var ol2 = document.getElementById("ol");
+			var li2 = ol2.getElementsByTagName("li");
+			console.log(li2);
+		</script>
+	</body>
+</html>

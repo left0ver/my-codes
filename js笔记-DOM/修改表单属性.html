@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>修改表单属性</title>
+	</head>
+	<body>
+		<button>点击</button>
+		<input type="text" value="zwc" />
+		<script>
+			var but = document.querySelector("button");
+			var input = document.querySelector("input");
+			but.onclick = function () {
+				input.value = "被点击了"; //按钮点击，改变input标签里value的值
+				input.disabled = true; //然后把表单的disable设置为true （该组件不能再使用了）
+				//but.disabled = true; //该按钮不能再点击了
+				this.disabled = true; //这句话何上面那句类似，更简洁一点
+			};
+		</script>
+	</body>
+</html>

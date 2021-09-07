@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>自定义属性</title>
+	</head>
+	<body>
+		<div data-index="1" data-list-name="20"></div>
+		<script>
+			//   自定义属性
+			// 为了区分元素自己的属性和自定义属性，一般我们在自定义属性前面加data-;如data-index
+
+			//  获取自定义属性
+			// 1.Element.getAttribute()方法     这个比较常用
+			var div = document.querySelector("div");
+			div.getAttribute("data-index");
+			//H5新增，ie11及以上才兼容
+			// dataset 是一个集合，里面存放了所有以data开头的自定义元素
+			console.log(div.dataset);
+			//2.Element.dataset.名称
+			console.log(div.dataset.index);
+			//如果自定义元素的名称比较长，例如:data-list-name="20"
+			// 则需这样获取：
+			console.log(div.dataset.listName);//采用驼峰命名法获取
+		</script>
+	</body>
+</html>

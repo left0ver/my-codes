@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>节点操作2</title>
+	</head>
+	<body>
+		<ul>
+			<li>123</li>
+		</ul>
+		<script>
+			//想在html页面添加一个元素有2步：
+			// 1.先创建一个元素
+			// 2.添加元素
+
+			//创建元素节点
+			var li = document.createElement("li");
+			var lili = document.createElement("li");
+
+			var ul = document.querySelector("ul");
+
+			//node.appenChild（child） node是父节点，child是子节点  在子元素的最后面添加节点，类似于push
+			ul.appendChild(li);
+			//在某个子节点前追加节点，insertBefore(追加的节点, 指定元素);如下：
+			ul.insertBefore(lili, ul.children[0]);
+			//删除节点 node.removeChild(child)
+			ul.removeChild(ul.children[0]);
+		</script>
+	</body>
+</html>

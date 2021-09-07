@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="time">zwc</div>
+		<!-- 因为文档是从上往下加载的，所以script要写到下面 -->
+		<script>
+			//返回的是一个元素对象
+			// 参数写id名，字符串
+			var timer = document.getElementById("time");
+			console.log(timer);
+			console.log(typeof timer);
+			// console.dir用于打印返回的元素对象，更好的查看里面的属性和方法
+			console.dir(timer);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>获取和移除自定义属性</title>
+	</head>
+	<body>
+		<div id="box" class="demo" index="1"></div>
+		<script>
+			//     获取属性值
+			//  1.   Element.属性名
+			//     2.Element.getAttribute("属性名")     //一般用于获取自定义属性
+			var div = document.getElementById("box");
+			console.log(div.getAttribute("id"));
+
+			//更改属性值
+			// 1.Element.id='box1';
+			div.id = "box2"; //修改id为box2
+			// 2. Element.setAttribute(属性名,修改之后的属性值) //这个一般用于修改自定义属性
+			div.setAttribute("id", "box1"); //修改id为box1
+			div.setAttribute("index", 2);
+
+			// 移除自定义属性
+			//  Element.removeAttribute(要移除的属性名)   用于移除自定义属性
+			div.removeAttribute("index");
+		</script>
+	</body>
+</html>

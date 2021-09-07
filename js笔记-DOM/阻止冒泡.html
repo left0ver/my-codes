@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>阻止冒泡</title>
+		<style>
+			.father {
+				width: 200px;
+				height: 200px;
+				background-color: blue;
+			}
+			.son {
+				width: 100px;
+				height: 100px;
+				background-color: #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		<script>
+			//实际开发和面试中经常问到
+			//dom推荐标准，stopPropagation()，用的多，ie678不支持
+			var father = document.querySelector(".father");
+			father.children[0].addEventListener("click", function (e) {
+				alert("son");
+				e.stopPropagation(); //stop 停止,progagation 传播
+				//这只是阻止了son冒泡，但是如果点击父亲，还是会冒泡
+				e.cancelBubble = true; //ie678才支持，非标准，cancel 取消 bubble泡泡
+			});
+			father.addEventListener("click", function (e) {
+				alert("father");
+			});
+			document.addEventListener("click", function (e) {
+				alert("document");
+			});
+		</script>
+	</body>
+</html>
