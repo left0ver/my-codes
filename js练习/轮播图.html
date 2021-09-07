@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>轮播图</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.main {
+				width: 992px;
+				height: 460px;
+				margin: 0 auto;
+				position: relative;
+				left: 0;
+				top: 0;
+				overflow: hidden;
+			}
+			.main .foucs {
+				width: 600%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.main ul li {
+				float: left;
+			}
+			.main ul li img {
+				width: 992px;
+				height: 460px;
+			}
+			.circle {
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+			}
+			.circle li {
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				/* background-color: #f00; */
+				border: 1px solid gray;
+			}
+			.current {
+				background-color: red;
+			}
+			.right {
+				border-bottom: 20px solid transparent;
+				border-top: 20px solid transparent;
+				border-left: 20px solid yellow;
+				position: absolute;
+				right: 0px;
+				top: 45%;
+			}
+			.left {
+				border-bottom: 20px solid transparent;
+				border-top: 20px solid transparent;
+				border-right: 20px solid yellow;
+				position: absolute;
+				left: 0px;
+				top: 45%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<ul class="foucs">
+				<li>
+					<a href="#"><img src="../img/轮播图1.webp" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="../img/轮播图2.jpeg" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="../img/轮播图3.webp" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="../img/轮播图4.webp" alt="" /></a>
+				</li>
+				<li>
+					<a href="#"><img src="../img/轮播图5.webp" alt="" /></a>
+				</li>
+			</ul>
+			<ul class="circle"></ul>
+			<div class="right"></div>
+			<div class="left"></div>
+		</div>
+		<script src="../js笔记-DOM/animate.js"></script>
+		<script>
+			var main = document.querySelector(".main");
+			var ul = document.querySelector(".foucs");
+			var circle = document.querySelector(".circle");
+			var imgs = document.querySelectorAll(".foucs img");
+			var right = document.querySelector(".right");
+			var left = document.querySelector(".left");
+			var index = 0;
+			//控制小圆圈的播放
+			var play = 0;
+			for (var i = 0; i < ul.children.length; i++) {
+				var li = document.createElement("li");
+				li.setAttribute("index", i);
+				circle.appendChild(li);
+
+				li.addEventListener("click", function () {
+					for (var i = 0; i < circle.children.length; i++) {
+						circle.children[i].className = "";
+					}
+					this.className = "current";
+					var imgWidth = imgs[0].offsetWidth;
+					index = this.getAttribute("index");
+					play = index;
+					animate(ul, -index * imgWidth);
+				});
+			}
+
+			var first = ul.children[0].cloneNode(true);
+			ul.appendChild(first);
+			right.addEventListener("click", function () {
+				if (index == ul.children.length - 1) {
+					index = 0;
+					ul.style.left = 0;
+				}
+				index++;
+
+				animate(ul, -index * imgs[0].offsetWidth);
+				play++;
+				if (play == circle.children.length) {
+					play = 0;
+				}
+				for (var i = 0; i < circle.children.length; i++) {
+					circle.children[i].className = "";
+				}
+				circle.children[play].className = "current";
+			});
+
+			left.addEventListener("click", function () {
+				if (index == 0) {
+					index = ul.children.length - 1;
+					ul.style.left = -index * imgs[0].offsetWidth + "px";
+				}
+				index--;
+				animate(ul, -index * imgs[0].offsetWidth);
+				play--;
+				if (play == -1) {
+					play = circle.children.length - 1;
+				}
+				for (var i = 0; i < circle.children.length; i++) {
+					circle.children[i].className = "";
+				}
+				circle.children[play].className = "current";
+			});
+
+			circle.children[0].className = "current";
+
+			var timer = setInterval(function () {
+				right.click();
+			}, 2000);
+			//鼠标经过停止自动播放
+			main.addEventListener("mouseenter", function () {
+				clearInterval(timer);
+			});
+			//鼠标离开自动播放
+			main.addEventListener("mouseleave", function () {
+				timer = setInterval(function () {
+					right.click();
+				}, 2000);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>显示明文密码</title>
+		<style>
+			#box {
+				position: relative;
+				width: 400px;
+				margin: 100px auto;
+				border-bottom: 1px solid #ccc;
+			}
+			input {
+				width: 300px;
+				height: 20px;
+				border: 0;
+				outline: none;
+			}
+			img {
+				height: 24px;
+				position: absolute;
+				right: 91px;
+				top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="password" id="password" />
+			<img src="../img/close.jpg" alt="" />
+		</div>
+		<script>
+			var photo = document.querySelector("img");
+			var input = document.querySelector("input");
+			var flag = 0;
+			photo.onclick = function () {
+				if (flag === 0) {
+					input.type = "text";
+					photo.src = "../img/open.jpg";
+					flag = 1;
+				} else {
+					input.type = "password";
+					photo.src = "../img/close.jpg";
+					flag = 0;
+				}
+			};
+		</script>
+	</body>
+</html>

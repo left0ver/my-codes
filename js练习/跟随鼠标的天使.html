@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>跟随鼠标的天使</title>
+		<style>
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="../img/logo.png" alt="" srcset="" />
+		<script>
+			var img = document.querySelector("img");
+			document.addEventListener("mousemove", function (e) {
+				// img.top = e.pageY;
+				// img.left = e.pageX;
+				//e.pageY和e.pageX获得的是鼠标的坐标，只是一个数字 后面要加上单位px
+				img.style.top = e.pageY + "px";
+				img.style.left = e.pageX + "px";
+			});
+		</script>
+	</body>
+</html>

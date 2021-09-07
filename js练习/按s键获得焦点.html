@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>按s键自动获得焦点</title>
+	</head>
+	<body>
+		<input type="text" />
+		<script>
+			var input = document.querySelector("input");
+			document.addEventListener("keyup", function (e) {
+				// console.log(e.keyCode);
+				if (e.keyCode === 83) {
+					//按s键之后自动获得焦点
+					input.focus(); //focus()方法，可以给该输入框自动获得焦点
+				}
+			});
+		</script>
+	</body>
+</html>

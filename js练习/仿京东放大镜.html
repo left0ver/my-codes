@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>仿京东放大镜</title>
+		<style>
+			#pre-img {
+				position: relative;
+				width: 350px;
+				height: 250px;
+				margin-left: 200px;
+				border: 1px solid red;
+			}
+			#mask {
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0.5;
+				cursor: move;
+				display: none;
+			}
+			#big img {
+				width: 500px;
+				height: 500px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="pre-img">
+			<img src="../img/mi.jpg" alt="" srcset="" />
+			<div id="mask"></div>
+			<div id="big">
+				<img src="../img/mi.jpg" alt="" srcset="" />
+			</div>
+		</div>
+		<script>
+			var mask = document.querySelector("#mask");
+			var bigImg = document.querySelector("#big img");
+			var preview = document.querySelector("#pre-img");
+			var preImg = document.querySelector("#pre-img>img");
+			preImg.addEventListener("mouseover", function (e) {
+				mask.style.display = "block";
+				bigImg.style.display = "block";
+			});
+
+			preImg.addEventListener("mouseout", function (e) {
+				mask.style.display = "none";
+				bigImg.style.display = "none";
+			});
+			preview.addEventListener("mousemove", function (e) {
+				var x = e.pageX - preview.offsetLeft;
+				var y = e.pageY - preview.offsetTop;
+				var maskX = x - mask.offsetWidth / 2;
+				var maskY = y - mask.offsetHeight / 2;
+
+				if (maskX <= 0) {
+					msskX = 0;
+				} else if (maskX >= preview.offsetLeft - mask.offsetWidth) {
+					maskX = preview.offsetLeft - mask.offsetWidth;
+				}
+				if (maskY <= 0) {
+					msskY = 0;
+				} else if (maskY >= preview.offsetHeight - mask.offsetHeight) {
+					maskY = preview.offsetHeight - mask.offsetHeight;
+				}
+				console.log(maskX);
+				console.log(maskY);
+				mask.style.left = maskX + "px";
+				mask.style.top = maskY + "px";
+			});
+		</script>
+	</body>
+</html>

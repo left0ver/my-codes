@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>简易计算器</title>
+		<script type="text/javascript">
+			for(;num!=5;) {
+			  var num = prompt('1.加法\n 2.减法\n 3.乘法\n 4.除法\n 5.break\n请输入你的值');
+				switch (Number(num)) {
+					case 1 :	
+					var num1=prompt('输入第一个值');
+					var num2=prompt('输入第二个值');
+					alert(Number(num1)+Number(num2));
+					continue;
+					
+					case 2 :
+					var num1=prompt('输入第一个值');
+					var num2=prompt('输入第二个值');
+					alert(Number(num1)-Number(num2));
+					continue;
+					
+					case 3 :	
+					var num1=prompt('输入第一个值');
+					var num2=prompt('输入第二个值');
+					alert(Number(num1)*Number(num2));
+					continue;
+					
+					case 4 :	
+					var num1=prompt('输入第一个值');
+					var num2=prompt('输入第二个值');
+					alert(Number(num1)/Number(num2));
+					continue;
+					case 5 :
+					break;
+					default:
+					alert('请输入1-5的数字')
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

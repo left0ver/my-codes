@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>表单隔行变色</title>
+		<style>
+			thead td {
+				text-align: center;
+				width: 300px;
+			}
+			tbody td {
+				text-align: center;
+				width: 300px;
+			}
+			.highlight {
+				background-color: #ff0;
+			}
+		</style>
+	</head>
+	<body>
+		<table align="center" border="1">
+			<thead>
+				<tr>
+					<td>ghakgg</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>ghakgg</td>
+				</tr>
+				<tr>
+					<td>ghakgg</td>
+				</tr>
+				<tr>
+					<td>ghakgg</td>
+				</tr>
+				<tr>
+					<td>ghakgg</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var trs = document.querySelector("tbody").querySelectorAll("tr");
+			for (var i = 0; i < trs.length; i++) {
+				trs[i].onmouseover = function () {
+					this.className = "highlight";
+				};
+				trs[i].onmouseout = function () {
+					this.className = "";
+				};
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>仿淘宝固定侧边栏</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body {
+				height: 2000px;
+			}
+			.head {
+				height: 200px;
+				background-color: #f00;
+			}
+			.banner {
+				height: 400px;
+				background-color: #0f0;
+			}
+			.main {
+				height: 500px;
+				background-color: #00f;
+			}
+			.slibar-banner {
+				width: 50px;
+				height: 150px;
+				background-color: pink;
+				position: absolute;
+				right: 0;
+				top: 300px;
+			}
+			.slibar-banner span {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="slibar-banner">
+			<span class="returnTop">返回顶部</span>
+		</div>
+		<div class="head"></div>
+		<div class="banner"></div>
+		<div class="main"></div>
+	</body>
+	<script>
+		var slibarBanner = document.querySelector(".slibar-banner");
+		var head = document.querySelector(".head");
+		var banner = document.querySelector(".banner");
+		var main = document.querySelector(".main");
+		var returnTop = document.querySelector(".returnTop");
+		var bannerTop = banner.offsetTop;
+		var slibarBannerTop = slibarBanner.offsetTop;
+		var mainTop = main.offsetTop;
+		document.addEventListener("scroll", function () {
+			if (window.pageYOffset >= bannerTop) {
+				slibarBanner.style.position = "fixed";
+
+				slibarBanner.style.top = slibarBannerTop - bannerTop + "px";
+			} else {
+				slibarBanner.style.position = "absolute";
+				slibarBanner.style.top = "300px";
+			}
+			if (window.pageYOffset >= mainTop) {
+				returnTop.style.display = "block";
+			} else {
+				returnTop.style.display = "none";
+			}
+		});
+		/*点击返回顶部按钮，返回到最上面，但是这样是直接返回到最上面的，不美观
+		returnTop.addEventListener("click", function () {
+			window.scroll(0, 0);
+		});
+*/
+		//下面这种做法更好
+		//因为是窗口滚动，所以对象是window，返回到顶部，所以target是0
+		returnTop.addEventListener("click", function () {
+			//这里得加个function，在function里面调用animate函数
+			animate(window, 0);
+		});
+
+		//这里需要一下动画函数
+		function animate(obj, target, callback) {
+			//加个清除以前的定时器的操作，保证只有一个定时器在执行
+			clearInterval(obj.timer);
+			//步长没取整，做运算时会出现小数，会导致除不尽的情况，应该将步长设置为整数，向上取整
+			//obj.step = (target - obj.offsetLeft) / 10;
+
+			//步长向上取整，这样既能使盒子向前走，也能向后走，
+			//obj.step = Math.ceil((target - obj.offsetLeft) / 10);
+
+			//当步长为负数时，应该向下取整，因此
+			obj.timer = setInterval(function () {
+				if (window.pageYOffset == target) {
+					clearInterval(obj.timer);
+				}
+				obj.step =
+					target - window.pageYOffset > 0
+						? Math.ceil((target - window.pageYOffset) / 10)
+						: Math.floor((target - window.pageYOffset) / 10);
+
+				window.scroll(0, window.pageYOffset + obj.step);
+			}, 15);
+			//下面这句if，相当于 callback&& callback();这样写更简洁
+			if (callback) callback();
+		}
+	</script>
+</html>

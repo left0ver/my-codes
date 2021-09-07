@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>下拉菜单</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#select {
+				display: none;
+			}
+			#select li {
+				width: 50px;
+				border: 1px solid #ff0;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li id="weiBo">
+				微博
+				<ul id="select">
+					<li>私信</li>
+					<li>评论</li>
+					<li>@我</li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			var weiBo = document.getElementById("weiBo");
+			var select = document.getElementById("select");
+			weiBo.onmouseover = function () {
+				select.style.display = "block";
+			};
+			weiBo.onmouseout = function () {
+				select.style.display = "none";
+			};
+		</script>
+	</body>
+</html>
