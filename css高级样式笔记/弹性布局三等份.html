@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>弹性布局</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			header {
+				width: 80%;
+				height: 200px;
+				border: 1px solid red;
+				margin: 100px auto;
+				display: flex;		/* 弹性布局模式 */
+								/* 给父盒子加display: flex */
+								/* 子盒子flex:1(不要跟单位),占多少份 */
+				min-width: 200px;	/* 给伸缩的最小宽度,防止一直伸缩挤压盒子 */
+				max-width: 1280px;
+				flex-direction: column;/* 垂直排列 */
+				/* flex-direction: row;水平排列(默认) */
+			}
+			div {
+				
+				height: 100%;
+				margin: 0 5px;
+			}
+			div:first-child {
+				background-color: #008000;
+				/* flex: 1; */	/* 	也可以给盒子具体的宽度 即:*/
+				width: 100px;		/* 然后剩下的宽度由其他盒子划分,这个盒子在伸缩的时候宽度会保持不变 */
+			}	
+			div:nth-child(2) {
+				background-color: pink;
+				flex: 2;
+			}
+			div:last-child {
+				background-color: #00FFFF;
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</header>
+	</body>
+</html>

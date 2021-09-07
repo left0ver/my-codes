@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2D变化，倾斜</title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				margin: 100px auto;
+				overflow: hidden;
+				border: 1px solid red;
+				
+				text-align: center;
+			}
+			div:hover {
+				transform: skewX(30deg);	/* transform: skewX(-30deg);水平方向倾斜,倾斜负数是向右倾斜,正数是向左,
+											transform: skewY(-30deg);垂直方向倾斜 */
+									/* 	transform: skew(30deg,20deg);分别对应水平方向和垂直方向的值,但平常一般只设置一个值,另一个不写默认为0 */
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			和付款哈客户供货给客户
+		</div>
+	</body>
+</html>

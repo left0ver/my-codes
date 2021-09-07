@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>align-content</title>
+		<style type="text/css">
+			nav {
+				width: 600px;
+				height: 600px;
+				margin: 100px auto;			
+				display: flex;
+				border: 1px solid red;
+				/* flex-wrap: wrap; */
+				flex-flow: row wrap; 
+				align-content: center;		/*使用align-content属性时,必须有这句话flex-flow: row wrap;否则不起作用 */
+											/* 用于设置多行盒子的垂直对齐方式 其属性值与align-items 相同， */
+											/* align-items争对的是一行,而align-content争对的是多行盒子用法与align-items相同 ; */
+				}
+				
+		nav div:first-child {
+						width: 200px;
+						height: 200px;
+						background-color: #008000;
+					}
+					nav div:nth-child(2) {
+						width: 200px;
+						background-color: #00FFFF;
+						height: 200px;
+					}
+					nav div:nth-child(3) {
+						width: 200px;
+						height: 200px;
+						background-color: red;
+					}
+					nav div:last-child {
+						width: 200px;
+						height: 200px;
+						background-color: #Ff0;
+					}
+				</style>
+			</head>
+			<body>
+				<nav>
+					<div>1</div>
+					<div>2</div>
+					<div>3</div>
+					<div>4</div>
+				</nav>
+			</body>
+		</html>

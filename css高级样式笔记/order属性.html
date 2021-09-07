@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>order属性</title>
+		<style type="text/css">
+			nav {
+				width: 600px;
+				height: 600px;
+				margin: 100px auto;			
+				display: flex;
+				border: 1px solid red;
+				
+				flex-flow: row wrap; 
+				align-content: center;
+				
+				}
+				
+	nav div:first-child {
+					width: 200px;
+					height: 200px;
+					background-color: #008000;
+					order: 1;				/* 用于设置盒子的顺序,数字大的在后面,数字小的在前面,默认的是0 */
+				}
+				nav div:nth-child(2) {
+					width: 200px;
+					background-color: #00FFFF;
+					height: 200px;
+				}
+				nav div:nth-child(3) {
+					width: 200px;
+					height: 200px;
+					background-color: red;
+					order: 0;
+				}
+				nav div:last-child {
+					width: 200px;
+					height: 200px;
+					background-color: #Ff0;
+				}
+			</style>
+		</head>
+		<body>
+			<nav>
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+			</nav>
+		</body>
+	</html>

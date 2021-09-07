@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2D变化，旋转</title>
+		<style type="text/css">
+			
+			div {
+				width: 117px;
+				height: 57px;
+				margin: 100px auto;
+				border: 1px solid red;
+			}
+			div img {
+				
+				transition: all 0.5s;/* 添加过渡效果 */
+				transform-origin: 30px 20px;	/* transform-origin 旋转中心点,默认是 center center(中心);还可以left top(左上角)
+														也可以用具体的像素表示,即 transform-origin: 30px(水平) 20px(垂直); */
+				
+			}
+			div:hover img {
+				transform: rotate(360deg);	/* transform: rotate(360deg)旋转,deg是单位度,正数表示顺时针旋转,负数表示逆时针旋转 */
+			}
+		</style>
+	</head>
+	<body>
+		
+			<div>
+				<img src="../img/logo.png" alt="">
+			</div>
+		
+	</body>
+</html>

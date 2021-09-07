@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>取消轮廓线和防止文本域拖拽</title>
+	</head>
+	<body>
+		<input type="text"  style="outline: 0;" /> 
+		<!-- 平常会有默认的轮廓线，就是点击文本框时会出现，跟边框有点像
+		但是平常工作中都不需要这个,一般会把这个取消掉 即 css中设置outline: 0 或者outline: none-->
+		<textarea rows="10" cols="30"></textarea>
+		<style type="text/css">
+			textarea {
+				resize: none;		/* resize: none:将文本域设置为不可以拖拽 */
+				outline: none;		/* 	取消轮廓 */
+			}
+		</style>
+		这是文字
+	</body>
+</html>

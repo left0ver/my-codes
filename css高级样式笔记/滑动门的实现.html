@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>滑动门的实现</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				display: inline-block;								/* 滑动门主要是使文字和背景凹凸不平,更有立体感
+																	原理是a里面包含span	将两个转化为inline-block
+																	给他们设置高度,不要设置宽,靠文字把宽度撑开
+																	一开始设置个padding,a设置padding-left(目的是没有文字是也能显示出来)
+																	span设置padding-right,再给个background-position
+																	具体如左边代码 */
+				background: url(../img/滑动门背景.png) no-repeat;	/* 注意：滑动门的背景图片要对 */
+				height: 50px;
+				padding-left: 26px;
+				margin: 50px;
+				line-height: 50px;
+				text-decoration: none;
+				color:#Fff;
+			}
+			a span {
+				display: inline-block;
+				background: url(../img/滑动门背景.png) no-repeat right;
+				height: 50px;
+				padding-right: 24px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<a href="#">
+			<span>首页</span>
+			
+		</a>
+	</body>
+</html>

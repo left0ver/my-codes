@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画</title>			
+		<style type="text/css">
+			@keyframes go{			/* 动画声明 (动画声明要在选择器外面)  @keyframe  动画名称 {       } 
+													from{          }
+													to{        }*/
+				from{
+					transform: translateX(0px);
+				}
+				to{transform: translateX(800px);}
+						}
+		div {											
+			
+											   /*<' animation-name '>： 检索或设置对象所应用的动画名称 
+												<' animation-duration '>： 检索或设置对象动画的持续时间 
+												<' animation-timing-function '>： 检索或设置对象动画的过渡类型 
+												<' animation-delay '>： 检索或设置对象动画延迟的时间 
+												<' animation-iteration-count '>： 检索或设置对象动画的循环次数 
+												<' animation-direction '>： 检索或设置对象动画在循环中是否反向运动 */ 
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			animation: go 2s ease 0s infinite alternate;}/* (引用动画) */
+		/*(分别对应:  动画名称 ,动画持续时间 动画过渡类型 动画延迟的时间 动画循环的次数 动画的方向)
+			动画名称是自己设置的(随便设置)  无线循环播放:infinite  
+					平常一般设置前2个就行 */
+				
+												
+								
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

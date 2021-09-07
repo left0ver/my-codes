@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>transform</title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				background-color: #00A4FF;
+				/* 让定位的盒子水平居中 */
+				position: absolute;
+				left: 50%;	/* 移动父亲盒子width的50% */
+				margin-left: -100px;/* (自己盒子宽度的一半)  要计算，不方便*/
+				/* 更好的方法: 
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);(**移动自己盒子width的50%) */
+				/* 垂直居中:
+					position:absolute;
+					top: 50%;
+					transform: translateY(-50%); */
+			}
+			div:active {
+				transform: translate(50px,30px);	/* (第一个是水平方向的距离,第二个是垂直方向的距离) */
+													/* transform 可以实现元素的位移,旋转,缩放,倾斜,甚至支持矩阵方式
+												配合过渡和动画知识,可以取代大量之前只能靠flash才可以实现的效果 */
+				/* transform: translateX(30px);		水平方向移动多少距离
+				transform: translateY(50px);		垂直方向移动多少距离 */
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div id="hhh">
+			
+		</div>
+	</body>
+</html>

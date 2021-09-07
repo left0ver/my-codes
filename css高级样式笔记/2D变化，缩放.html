@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>scale</title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				height: 200px;
+				background-color: #0086B3;
+				transform: scale(1.2,1.5);	/* (分别对应水平缩放和垂直缩放,大于1是放大) */
+												/* 也可以transform: scaleX(1.3);或者 transform: scaleY(1.2); */
+			}
+			header {
+				width: 117px;
+				height: 57px;
+				margin: 100px auto;
+				border: 2px solid #000000;
+				overflow: hidden; /* 溢出隐藏 */
+			}
+			header:hover img {
+				transform: scale(1.1);
+			}
+			header img {
+				transition: all 0.2s;/* (给谁做动画,过渡就给谁) */
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<header>
+			<img src="../img/logo.png"width="117px" height="57px" >
+		</header>
+	</body>
+</html>
