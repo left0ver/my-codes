@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据类型</title>
+		<script type="text/javascript">
+		 var age=prompt('您今年多少岁了');
+		 alert('我今年'+age+'岁了')
+			// 数据类型：
+			// Number 数字型
+			// Boolean 布尔型
+			// String	字符串型
+			// undefined	对变量声明了,但未赋值,就是未定义类型
+			// null 	空类型
+			
+			// Number:
+			var a=0b111;	//在数字前面加0b是二进制类型
+			console.log(a);
+			var b=010;		//在数字前面加0b是8进制类型
+			console.log(b);
+			var c=0xa;		//在数字前面加0x是16进制类型
+			console.log(c);		//输出时浏览器会默认转换为10进制类型
+			console.log(isNaN(12));			//isNaN()该方法判断括号里面的是不是数字,是数字返回false,不是数字返回true
+			console.log(isNaN('zwc'));
+			
+			
+			//String
+			var my='我是"一个"程序员';		
+				console.log(my);
+				//转义字符：
+				//	 \n 换行
+				// 	\\ 斜杠
+				// 	\t 缩进
+				// 	\b 空格
+				// 	\" 双引号
+				// 	\' 单引号
+			//Boolean
+			var flag=true, 
+				flag1=false;
+			console.log(flag+1);	//true当1	//2
+			console.log(flag1+1);	//false当0	//1
+			console.log(flag+'zwc');	// truezwc  任何一种数据类型和字符型相加都是字符型 
+			
+			//undefined
+			var z=undefined;
+			console.log(z+'zwc');	//undefinedzwc
+			console.log(z+3);		//NaN
+			
+			//null
+			var speace=null;
+			console.log(speace+3);	//3
+			console.log(speace+'zwc');//nullzwc
+			
+			//检测变量的数据类型
+			var v1=1;
+			var v2='zwc';
+			var v3=true;
+			var v4=undefined;
+			var v5=null;
+			console.log(typeof v1);
+			console.log(typeof v2);
+			console.log(typeof v4);
+			console.log(typeof v5);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

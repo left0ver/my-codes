@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>数组</title>
+		<script type="text/javascript">
+			//第一种方法创建数组
+			//利用new创建数组
+			var arr = new Array(); //var 数组名=new Array()	创建一个空数组
+			var arr6 = new Array(3); //创建长度为3的数组
+			var arr7 = new Array(3, 5); //创建长度为2，元素为3，5的数组，初始化
+
+			//第二种:利用数组字面量创建数组(最常用的)		数组里面的元素的类型可以是任意的数据类型
+			var arr1 = []; //空的数组
+			var arr2 = [1, 2, "zwc", true]; //初始化的数组
+			console.log(arr2);
+			//遍历数组
+			for (var i = 0; i < arr2.length; i++) {
+				console.log(arr2[i]);
+			}
+			//扩展数组
+			//1.通过数组长度来扩展
+			var arr3 = [1, 25, 7, 9, 6];
+			arr3.length = 7; //多出来的是undefine的类型
+			console.log(arr3);
+
+			// 2.通过修改数组索引的方法扩展，直接扩展
+			var arr4 = [1, 4, "uui"];
+			arr4[4] = "zwc";
+			arr4[5] = 9;
+			console.log(arr4); //**千万不要之间给数组名赋值,否则会覆盖以前的数据 	如arr4=35;
+
+			//筛选数组
+			var arr5 = [1, 2, 99, 5557, 236, 3, 2, 55];
+			var arr6 = [];
+			for (var i = 0; i < arr5.length; i++) {
+				if (arr5[i] > 10) arr6[arr6.length] = arr5[i]; //将大于10的数存到新数组里
+			}
+			console.log(arr6);
+		</script>
+	</head>
+	<body></body>
+</html>

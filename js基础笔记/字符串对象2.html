@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script>
+			//算法：查找一个字符串中某个字符出现的位置和次数
+			// 1.查找第一次出现的位置
+			// 2.只要index不等于-1;则打印出来，继续往后找；
+			// 3.继续往后找可以用indexOf方法，将开始查找的位置设置为当前索引+1；继续查找
+			var str = "zwccwzlopziz";
+			index = str.indexOf("z");
+			var num = 0;
+			while (index !== -1) {
+				console.log(index);
+				num += 1;
+				index = str.indexOf("z", index + 1);
+			}
+			console.log("该字符出现的次数为" + num + "次");
+
+			//根据位置返回字符
+
+			console.log(str.charAt(3)); //返回索引为3的字符
+			//可以用这个来遍历字符串
+			for (var i = 0; i < str.length; i++) {
+				console.log(str.charAt(i));
+			}
+			//返回相应索引的字符的AscII值  ；可以用这个来判断用户按了哪个键
+			console.log(str.charCodeAt(3));
+			//H5新增的，ie8以下不支持 str[index]    返回对应字符
+			console.log(str[3]);
+            
+		</script>
+	</head>
+	<body></body>
+</html>

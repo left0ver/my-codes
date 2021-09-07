@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>基本包装类型</title>
+		<script>
+			//基本包装类型就是将简单数据类型包装成复杂数据类型，这样基本数据类型就有了属性和方法
+			// String Number Boolean 这三种简单数据类型可以包装成复杂数据类型
+			// 对象才有属性和方法，复杂数据类型才有
+			// 把简单数据类型包装成复杂数据类型
+			//(1.)将简单数据类型包装成复杂数据类型
+			var temp = new String("andy");
+			//将这个临时变量赋给str
+			var str = temp;
+			//销毁这个临时变量
+			temp = null;
+			console.log(str.length);
+		</script>
+	</head>
+	<body></body>
+</html>

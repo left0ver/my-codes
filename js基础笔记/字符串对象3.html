@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>统计出现最多的字符</title>
+		<script>
+			var str = "zwclojkzwccwzwwzc";
+			var o = {};
+			for (var i = 0; i < str.length; i++) {
+				var chars = str.charAt(i);
+				if (o[chars]) {
+					//判断该属性值是否为0
+					//o[chars]得到的是属性值
+					o[chars]++; //如果有这个属性；就让属性值+1
+				} else {
+					o[chars] = 1; //如果没有这个属性；就让属性值=1
+				}
+			}
+			console.log(o);
+			var max = 0;
+			var ch = "";
+			for (var k in o) {
+				//k是属性名
+				if (o[k] > max) {
+					//o[k]得到属性值
+					max = o[k];
+					ch = k;
+				}
+			}
+			console.log("出现最多的字符是" + ch + " 出现" + max + "次");
+
+			//字符串操作
+			//拼接字符串
+			var str1 = "zwclopoop";
+			console.log(str1.concat("red")); //这个方法和用+号一样，平常习惯用＋号
+			//截取字符串
+			console.log(str1.substr(2, 3)); //第一个参数是开始截取的位置，第二个参数是截取的长度
+			//替换字符串
+			// replace方法
+			console.log(str1.replace("o", "*")); //一次只会替换一个，要想替换多个，用循环即可,如下：
+			while (str1.indexOf("o") !== -1) {
+				str1 = str1.replace("o", "*");
+			}
+			console.log(str1);
+			var str2 = "zwc&zwc&zwc1";
+			//将字符串转换为数组 split 和我们前面学的将数组转换为字符串 join方法有点类似
+			console.log(str2.split("&")); //以&为分隔符将字符串分割为数组
+		</script>
+	</head>
+	<body></body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>对象</title>
+		<script type="text/javascript">
+			// 1.用字面量{ }创建对象
+			// var 对象名= { } 创建了一个空对象
+			var obj = {
+				name: "keke",
+				type: "阿拉斯加犬",
+				age: 5,
+				cloor: "red",
+				bark: function () {
+					console.log("汪汪~~");
+				},
+
+				showfilm: function () {
+					console.log("演电影");
+				},
+			};
+			//里面的属性和方法采用键值对的方式 ;  属性名:值
+			//多个方法和属性之间是用,逗号隔开
+			//方法冒号后面的是匿名函数
+			// 使用对象:
+			// 1.对象名.属性名或方法名
+			// obj.name   obj.showfilm() 千万别忘了小括号
+			// 2.对象名['属性名或方法名'],千万别忘了[ ]里面有''
+			//	obj['age']	 obj['bark()']
+
+			// 2.利用new Object()来创建对象
+			var obj1 = new Object();
+			obj1.name = "zwc";
+			obj1.age = 12; //每个属性和方法之间用分号隔开
+			obj1.play = function () {
+				//用等号赋值的方法来为对象的属性和方法赋值
+				console.log("palay");
+			};
+
+			// 3.利用构造函数来创建对象		可以创建多个对象
+			function Star(uname, age) {
+				//构造函数的函数名开头要大写
+				this.name = uname;
+				this.age = age; //构造函数的属性和方法前面必须加this
+				this.sing = function (sang) {
+					console.log(sang);
+				};
+			}
+			var ldh = new Star("刘德华", 18); //利用new Star()来调用构造函数，调用构造函数时必须要用new
+			console.log(typeof ldh); //构造函数返回的是一个对象
+			ldh.sing("唱歌");
+			console.log(ldh.name);
+
+			// new 在执行时会做的4件事:
+			// 1.创建一个空对象
+			// 2.让this指向这个空对象
+			// 3.执行函数里的代码,给新对象添加属性和方法
+			// 4.返回这个新对象
+		</script>
+	</head>
+	<body></body>
+</html>

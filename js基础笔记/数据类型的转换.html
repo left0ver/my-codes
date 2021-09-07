@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据类型的转换</title>
+		<script type="text/javascript">
+			//转换为字符串类型
+			var num=10;
+			var str=num.toString();
+			// 第一种:变量名.toString()
+			console.log(str);
+			//第二种:String(变量名)
+			console.log(String(num));
+			// 第三种:用的最多,用+拼接字符串的方法转换,也叫隐式转换,如下:
+			console.log(num+'');
+			console.log(typeof str);
+			
+			
+			//将字符串类型转换为数字型
+			var str1='12.3';
+			// 用parseInt()方法来转换
+			console.log(parseInt(str1));//转化为整形
+			//用parseFloat()方法来转换
+			console.log(parseFloat(str1));//转化为浮点型
+			// 用Number()来转换,这个是转化为浮点型
+			console.log(Number(str1));
+			//用算术运算 - * / 来隐式转换
+			console.log('12'*2);
+			
+			
+			// 转换为布尔类型
+			// 只有''
+			//  0
+			//  null
+			//  undefined
+			//  NaN  这五个会转换为false,其余的都转换为true;
+			// 用Boolean()方法转换
+			var flag=undefined;
+			 var flag1=Boolean(flag);
+			console.log(flag1);
+			console.log(Boolean('zwc'));
+			
+			
+			var a=Number(prompt());
+			var b=Number(prompt());
+			var c=Number(a+b);
+			alert(c);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

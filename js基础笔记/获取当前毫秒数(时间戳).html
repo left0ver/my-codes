@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>获取时间戳</title>
+		<script>
+			//第一种方法
+			var date = new Date();
+			console.log(date.valueOf()); //valueOf,getTime都是获取当前时间距离1970年1月1日的毫秒数（时间戳）
+			console.log(date.getTime());
+			//第二种方法 ,简写方法(比较常用的)
+			var date1 = +new Date();
+			console.log(date1);
+			//第三种，H5新增的，低版本浏览器可能不兼容
+			console.log(Date.now());
+		</script>
+	</head>
+	<body></body>
+</html>

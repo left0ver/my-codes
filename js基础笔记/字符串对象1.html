@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>字符串对象</title>
+		<script>
+			//字符串的不可变性:指的是字符串里面的值不可变，虽然看上去可以改变内容，但是其实是地址变了，str指向了一个新的地址，但是原来的字符串还在那里，因此不要大量拼接字符串，会消耗内存
+			var str = "zwc";
+			console.log(str);
+			str = "zwc1"; //重新给字符串赋值，是在内存中新开辟了一个空间，原来的值还是在的；这个特点就是字符串的不可变
+			console.log(str);
+
+			//字符串所有的方法都不会修改字符串本身（字符串的不可变），操作完会返回一个新字符串
+			// 根据字符返回索引
+
+			str = "zwc1cwz";
+			console.log(str.indexOf("w")); // 1   从前查找'w'字符;返回索引号
+			console.log(str.indexOf("w", 2)); // 5  从索引为2的地方开始查找'w'字符;返回索引号
+			console.log(str.lastIndexOf("w", 4)); //  1  从后往前找，从索引为4的地方往前找
+		</script>
+	</head>
+	<body></body>
+</html>

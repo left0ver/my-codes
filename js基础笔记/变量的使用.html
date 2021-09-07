@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>变量的使用</title>
+		<script type="text/javascript">
+				var myname=prompt('请输入你的名字');		//name这个变量名在浏览器中一般有特殊含义,所以尽量不要使用该变量名
+				 alert('我的名字是'+myname);						//console.log(name);不报错
+															//当浏览器执行的时候报错了,就不会往下执行了,因为js代码是一行一行执行的
+				var apple_1='zwc1',
+				apple_2='zwc2',
+				temp;
+				temp=apple_1;
+				apple_1=apple_2;
+				apple_2=temp;
+				console.log(apple_1);
+				console.log(apple_2);
+				
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

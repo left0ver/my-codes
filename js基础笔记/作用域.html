@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>作用域</title>
+		<script type="text/javascript">
+			//在函数内部,没有声明就之间赋值的变量是全局变量,调用函数之后该变量就会起效
+			function fu() {
+				num2 = 10;
+			}
+			fu();
+			console.log(num2);
+			// 全局变量只有浏览器关闭之后才能被销毁,比较占内存资源
+			// 局部变量执行完之后就会被销毁,比较节约资源
+			if (3 < 5) {
+				var num = 10; //没有块级作用域 该num是全局变量
+			}
+			console.log(num);
+		</script>
+	</head>
+	<body></body>
+</html>
