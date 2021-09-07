@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script type="module">
+			let user = {
+				name1: "zwc1",
+				age1: 13,
+			};
+			let reponse = await fetch("http://127.0.0.1:8000", {
+				method: "POST",
+				headers: {
+					"Content-Type": "multipart/form-data",
+				},
+				body: JSON.stringify(user),
+			});
+			let result = await reponse.json();
+			console.log(reponse);
+			console.log(reponse.headers);
+			console.log(result);
+			console.log(JSON.stringify(result));
+		</script>
+	</body>
+</html>
