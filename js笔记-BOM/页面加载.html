@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>页面加载</title>
+	</head>
+	<body>
+		<script>
+			window.onload = function () {
+				alert(11); //这种方法只能用一次，如果有多个window.onload事件，以最后一个为准
+			};
+			//window.onload 就是等页面的document，图片，css文件等加载完之后再执行里面的代码
+			// 这样script代码就可以写到页面的任意一个地方
+			//推荐用window.addEventListener
+			//
+			window.addEventListener("load", function () {
+				var but = document.querySelector("button");
+				but.addEventListener("click", function () {
+					alert("点击我");
+				});
+			});
+
+			window.addEventListener("DOMContentLoaded", function () {
+				alert(10);
+				/*
+                window.addEventListener("DOMContentLoaded", function () {}
+                当DOM加载完就执行,当图片较多，要加载较长时间时，用这个可以先执行js代码，不影响交互效果
+                可以改善用户体验
+				加载完DOM，不包含图片，css，flash等，加载速度比load快一些
+                */
+			});
+		</script>
+		<button>点击</button>
+	</body>
+</html>

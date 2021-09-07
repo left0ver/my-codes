@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>js异步</title>
+	</head>
+	<body>
+		<script>
+			/*
+        同步任务，都放到了主线程上执行，形成一个执行栈
+        */
+
+			/*
+        js的异步是通过回调函数来实现的
+        一般而言，异步任务有以下三种类型：
+        1.普通事件：click,resize 等
+        2.资源加载：load,error 等
+        3.定时器：包括setTimeout  setInterval 等
+        异步任务相关回调函数添加到任务队列中（任务队列也称消息队列）
+        */
+
+			/*
+        执行顺序：
+        1.先执行执行栈中的同步任务
+        2.碰到异步任务（回调函数），将其放到任务队列中，再执行下一个同步任务
+        3.一旦执行栈中的同步任务执行完毕，就会按次序读取任务队列中的异步任务，
+            于是被读取的异步任务结束等待状态，进入执行栈，，开始执行
+
+        异步任务会交给异步进程处理，比如当你有点击事件，他会把这个回调函数添加到任务队列中
+        不点击就不添加
+        定时器也是如此，例如：3s之后将回调函数加到任务队列中
+        当执行完同步任务时，会查询任务队列，取出一个任务，推入主线程处理
+        
+        */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>停止定时器</title>
+	</head>
+	<body>
+		<button>停止定时器</button>
+		<script>
+			/*
+          window.clearTimeout(timeout ID);清除定时器
+                    timeout ID 是定时器的名称
+					
+          window.clearInterval(timeout ID);清除定时器
+                    timeout ID 是定时器的名称
+        */
+			var but = document.querySelector("button");
+			var timer = setTimeout(function () {
+				console.log("爆炸了");
+			}, 3000);
+			but.addEventListener("click", function () {
+				window.clearTimeout(timer);
+			});
+		</script>
+	</body>
+</html>
