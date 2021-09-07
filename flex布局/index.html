@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			body {
+				width: 1519px;
+				height: 2000px;
+				/* overflow: hidden; */
+			}
+			.clearfix:after,
+			.clearfix:before {
+				content: "";
+				display: table;
+			}
+			.clearfix:after {
+				clear: both;
+			}
+			.clearfix {
+				*zoom: 1;
+			}
+
+			.father-head {
+				position: relative;
+				top: 0;
+			}
+			#head {
+				width: 100%;
+				height: 100px;
+				background-color: #f5f5f5;
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 99;
+				border-bottom: 1px solid gray;
+			}
+			#top {
+				display: flex;
+				width: 1251px;
+				height: 100%;
+
+				padding-left: 138px;
+				padding-right: 186px;
+				justify-content: space-between;
+			}
+			#top > div {
+				display: flex;
+				background-color: #f5f5f5;
+			}
+			#top .top-left {
+				justify-content: space-between;
+				align-items: center;
+				width: 370px;
+				margin-right: 100px;
+			}
+			#top .top-left a:first-child img {
+				width: 217px;
+				height: 45px;
+			}
+			#top .top-left #city {
+				height: 40px;
+				width: 70px;
+				background-color: gray;
+				text-align: center;
+				line-height: 40px;
+				color: #f5f5f5;
+			}
+			.change {
+				font-size: 14px;
+			}
+			.top-center {
+				flex-grow: 1;
+				justify-content: start;
+				align-items: center;
+			}
+			.top-center a {
+				margin-right: 29px;
+				font-size: 13px;
+				color: #220e03;
+			}
+			.top-right {
+				width: 215px;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.top-right img {
+				width: 23px;
+				height: 23px;
+			}
+			.top-right #contact {
+				width: 73px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 13px;
+				border: 1px solid gray;
+			}
+
+			/**/
+
+			#main {
+				height: 662px;
+				display: block;
+				margin-top: 78px;
+			}
+			#main img {
+				width: 100%;
+				height: 662px;
+			}
+			/**/
+
+			#cakes {
+				display: flex;
+				justify-content: space-around;
+				height: 477px;
+				align-items: center;
+			}
+			#cakes div {
+				text-align: center;
+				height: 477px;
+				flex-grow: 1;
+				padding-top: 77px;
+			}
+			#cakes div img {
+				vertical-align: center;
+				/* margin-bottom: 77px; */
+			}
+			#cakes :nth-child(1) {
+				background-color: #eee2c8;
+			}
+			#cakes :nth-child(2) {
+				background-color: #ddc69c;
+			}
+			#cakes :nth-child(3) {
+				background-color: #eee2c8;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father-head clearfix">
+			<div id="head">
+				<div id="top">
+					<div class="top-left">
+						<a href="javascript:;">
+							<img src="img/logo_big01.png" alt=""
+						/></a>
+						<a href="javascript:;"
+							><img src="img/icon-address.png" alt=""
+						/></a>
+						<span class="change">武汉市</span>
+						<a href="javascript:;" id="city">
+							<span class="change">切换城市</span>
+						</a>
+					</div>
+					<div class="top-center">
+						<a href="javascript:;">全部</a>
+						<a href="javascript:;">蛋糕</a>
+						<a href="javascript:;">下午茶</a>
+						<a href="javascript:;">手信</a>
+						<a href="javascript:;">团购预约</a>
+						<a href="javascript:;">关于我们</a>
+					</div>
+					<div class="top-right">
+						<img src="img/i-search.jpg" alt="" />
+						<img src="img/i-cart.jpg" alt="" />
+						<img src="img/i-user.jpg" alt="" />
+						<div id="contact">
+							<a href="javascript:;">联系我们</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<img src="img/bg.jpg" alt="" />
+		</div>
+		<div id="cakes">
+			<div><img src="img/cake_03.jpg" alt="" /></div>
+			<div><img src="img/cake_05.jpg" alt="" /></div>
+			<div><img src="img/cake_07.jpg" alt="" /></div>
+		</div>
+	</body>
+</html>
