@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>call方法的作用</title>
+	</head>
+	<body>
+		<script>
+			function fn(x, y) {
+				console.log(x + y);
+			}
+			var o = {
+				name: "andy",
+			};
+			// fn(1, 3);
+			/*
+			         1.可以调用函数，但是如果要传参数，则必须指明this的指向，如下：不能这样：fn.call(1, 4);
+			         2.如果不要传参数。则可以fn.call() 这时候this指向windows
+			fn.call(fn, 1, 4);
+			         3.可以改变this的指向,如下
+			         */
+			fn.call(o, 2, 6);
+		</script>
+	</body>
+</html>

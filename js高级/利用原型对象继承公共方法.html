@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>利用原型对象继承公共方法</title>
+	</head>
+	<body>
+		<script>
+			// 我们的公有属性一般写在构造函数里面，公共方法写在原型对象里
+			function Father(uname, age) {
+				//这里的this指向父构造函数的实例
+				this.uname = uname;
+				this.age = age;
+			}
+			Father.prototype.money = function () {
+				console.log("zuanqian");
+			};
+
+			function Son(uname, age) {
+				//这里的this指向子构造函数的实例
+				Father.call(this, uname, age); //用call方法改变构造函数指向
+			}
+
+			//	Son.prototype = Father.prototype; 不能用这种方法继承，直接把父亲的原型对象赋值给儿子，这样儿子的原型对象就直接指向了父亲的原型对象，如果儿子添加了方法，父亲也会同时添加方法，这两个原型对象的地址是一样的
+
+			/*用以下方法继承*/
+
+			Son.prototype = new Father(); //儿子的原型对象指向了父亲的实例对象，父亲的实例对象会指向他自己的原型对象，这样儿子的原型对象里就有了父亲的原型对象里的方法
+			Son.prototype.constructor = Son; //如果利用实例对象的形式修改了原型对象，别忘了利用constructor指回原来的函数
+			Son.prototype.school = function () {
+				console.log("上学");
+			};
+			var son = new Son("liu", 18);
+			console.log(son);
+			console.log(Father.prototype);
+			console.log(Son.prototype.constructor);
+			console.log(son.money);
+		</script>
+	</body>
+</html>

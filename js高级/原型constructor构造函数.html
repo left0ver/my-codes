@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>原型constructor构造函数</title>
+	</head>
+	<body>
+		<script>
+			function Star(uname, age) {
+				this.name = uname;
+				this.age = age;
+				// this.sing = function () {
+				// 	console.log("我会唱歌");
+				// };
+			}
+			//当有很多公共方法时，就会像这样写
+			Star.prototype = {
+				//将constructor指回原来的构造函数
+				constructor: Star,
+				sing: function () {
+					console.log("我会唱歌");
+				},
+				movie: function () {
+					console.log("我会演电影");
+				},
+			};
+
+			var ldh = new Star("刘德华", 18);
+			var zxy = new Star("张学友", 19);
+			//原型里面有个constructor属性，这个构造函数的作用就是告诉我们这个对象是通过哪个构造函数创建的，constructor这个属性返回的就是构造函数本身
+
+			/*
+			             1.如果我们修改了原型对象，给原型对象赋值的是一个对象必须手动利用constructor来指回原来的构造函数
+			             2.一般原型对象里的方法比较多的时候，就会给原型对象重新赋值一个对象
+
+			         */
+
+			console.log(Star.prototype);
+			console.log(ldh.__proto__);
+			console.log(Star.prototype.constructor);
+			console.log(ldh.__proto__.constructor);
+		</script>
+	</body>
+</html>

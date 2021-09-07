@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var arr = [5, 3, 6];
+			//增强for循环，用于遍历数组，数组名.forEach（function (value, index, arr) {}）
+			//forEach里面有一个回调函数，index是数组下标，value是arr[index],最后一个参数是数组的名，返回当前数组
+			arr.forEach(function (value, index, arr) {
+				//第一个参数必须有，后两个可选
+				console.log(value);
+				console.log(index);
+				console.log(arr);
+			});
+		</script>
+	</body>
+</html>

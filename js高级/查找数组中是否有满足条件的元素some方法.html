@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var arr = new Array(1, 339, 5, 6, 4);
+			//arr.some 方法用于查找数组中是否有满足条件的元素，如果有，则返回true
+			//当查找到有满足条件的元素时，就不往下遍历了，
+			// 返回的是一个boolean值
+			var flag = arr.some(function (value, index, arr) {
+				return value > 60;
+			});
+			/*
+				arr.every（function(value,index,arr) {}）
+				every方法是检测数组中的元素是否全部满足条件，全部符合则返回true
+				有一个不符合则返回false，同时停止遍历
+				*/
+			console.log(flag);
+		</script>
+	</body>
+</html>

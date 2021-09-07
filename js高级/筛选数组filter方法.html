@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var arr = [1, 3, 9, 10];
+			//里面回调函数里面第一个参数，是arr[index],index是索引，arr是当前数组
+			//该方法返回的是一个数组
+			var newArr = arr.filter(function (value, index, arr) {
+				return value % 2 === 0;
+			});
+			console.log(newArr);
+		</script>
+	</body>
+</html>

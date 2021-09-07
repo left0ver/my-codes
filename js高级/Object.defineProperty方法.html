@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var obj = {
+				id: 1,
+				uname: "zwc",
+				price: 999,
+			};
+			/*以前要对对象添加属性,或者修改属性就这样
+			obj.num = 5;
+             */
+			/*Object.defineProperty方法也可以对对象修改或者添加属性
+            三个参数：（都必须要）
+            1.目标对象
+            2.具体的要添加的属性或者要修改的属性
+            3.descriptor（说明），这个参数是以对象的形式书写的
+            有4个值
+            {
+                value：  //要修改的值
+                writable：     //是否可以被重写，即该属性的值是否能被修改，true是可以，false是不可以，默认false
+            }
+                */
+			Object.defineProperty(obj, "uname", {
+				value: "zwc1",
+				writable: false,
+			});
+
+			/*
+			Object.defineProperty(obj, "uname", {
+				value: "zwc2",
+			}); 
+            如果用Object.defineProperty方法修改属性，即使该属性writable为false，也可以进行修改
+            如果writable为false，即不能通过下面的方法修改属性值
+			obj.uname = "zwc2"; //可以看出来没被修改成功
+            */
+			console.log(obj);
+		</script>
+	</body>
+</html>

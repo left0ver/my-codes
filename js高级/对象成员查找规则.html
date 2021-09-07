@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>对象成员查找规则</title>
+	</head>
+	<body>
+		<script>
+			function Star(uname, age) {
+				this.uname = uname;
+				this.age = age;
+			}
+			Star.prototype.sing = function () {
+				console.log("我会唱歌");
+			};
+			/*
+            实例化对象查找成员规则：
+          1.  先找这个实例对象李有没有这个成员
+            没有就找ldh.__proto__就是Star.prototype有没有这个成员
+            没用就继续往上找，找Object.prototype或者ldh.__proto__.__proto__有没有这个成员
+           再没有就再往上找，就是null
+
+           2.如果多个里面都有这个成员，则采用就近原则
+            */
+			var ldh = new Star("刘德华", 18);
+			Object.prototype.sex = "nv";
+			// Star.prototype.sex = "女";
+
+			// ldh.sex = "nan";
+			console.log(ldh.sex);
+		</script>
+	</body>
+</html>

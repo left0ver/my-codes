@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>构造函数原型对象prototype</title>
+	</head>
+	<body>
+		<script>
+			/*
+			         1.以前， 我们把我们的方法放在构造函数里面，但是这样会有一个问题，在创建实例的时候，都会为这些方法开辟一个空间来存放这些函数，这样就比较浪费内存
+			         2.我们把公共的方法放在原型对象里面，这样就可以实现对方法的共享，节约内存空间，创建的每个实例都能使用该方法
+			         3.原型是一个对象，每个构造函数里面都为我们定义好了这个对象，这个对象的所有的属性和方法，都会为构造函数所拥有
+			         4.我们可以把那些不变的方法，公共方法定义到原型对象里面，
+			         5.把公共属性定义到构造函数里面
+			     */
+			function Star(uname, age) {
+				this.name = uname;
+				this.age = age;
+				// this.sing = function () {
+				// 	console.log("我会唱歌");
+				// };
+			}
+			//将公共方法定义到原型对象里面
+			Star.prototype.sing = function () {
+				console.log("我会唱歌");
+			};
+			var ldh = new Star("刘德华", 18);
+			var zxy = new Star("张学友", 19);
+			//用实例对象调用定义在原型对象里的方法
+			ldh.sing();
+			zxy.sing();
+			//这里比较的是两者的地址，地址相同，返回true
+			console.log(ldh.sing === zxy.sing); //返回true
+			console.log(ldh.__proto__);
+		</script>
+	</body>
+</html>

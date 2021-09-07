@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>类的继承和super关键字</title>
+	</head>
+	<body>
+		<script>
+			class Father {
+				constructor(x, y) {
+					this.z1 = x;
+					this.z2 = y;
+				}
+				sum() {
+					console.log(this.z1 + this.z2);
+				}
+			}
+			class Son extends Father {
+				constructor(x, y) {
+					/*
+                    这里的this.指向的是子类的x，和y，如果这时候调用父类的sum()方法就会报错，
+                    因为父类的sum方法中指向的是父类的z1和z2，使用super关键字
+					this.z1 = x;
+					this.z2 = y;
+                    */
+					//使用super关键字调用父类的构造器
+					//子类在构造器中使用super时，super要放在子类的this前面，即必须先调用父类的构造方法，再调用子类的
+					super(x, y);
+
+					this.z1 = x;
+					this.z2 = y;
+				}
+
+				sum() {
+					super.sum();
+				}
+				subtract() {
+					console.log(this.z1 - this.z2);
+				}
+			}
+			var son = new Son(1, 2);
+			var son1 = new Son(11, 22);
+			/*
+            就近原则：
+            继承中，如果实例化的子类调用方法时，会先看子类中有没有该方法，有就调用子类的，没有的话就查找父类的
+            
+            */
+			son.sum();
+			son1.sum();
+			son.subtract(); //-1
+		</script>
+	</body>
+</html>

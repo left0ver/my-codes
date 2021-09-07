@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>类和对象</title>
+	</head>
+	<body>
+		<script>
+			//类名一般大写
+			class Star {
+				//构造器，相当于java里的构造函数
+				constructor(uname, age) {
+					//这里this指向的是实例化的对象
+					//一般把类的共有属性放到constructor里
+					this.name = uname;
+					this.age = age;
+				}
+				//类里面的方法不要加function，如下：
+				sing(song) {
+					console.log(this.name + song);
+				}
+			}
+			var ldx = new Star("刘德华", 18);
+			var zxy = new Star("张学友", 20);
+			console.log(ldx.name);
+			console.log(ldx.age);
+			ldx.sing("嘿嘿");
+		</script>
+	</body>
+</html>

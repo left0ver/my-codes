@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>构造函数创建对象</title>
+	</head>
+	<body>
+		<script>
+			//用类来创建对象，这是es6中的内容，但是现在好多浏览器还不支持es6，以下方法是最初的创建对象的方法
+			//   1.new Object()创建对象
+			var obj = new Object();
+			//   2.字面量创建对象
+			var obj1 = {};
+			//  3.构造函数创建对象 ，如下：
+			function Star(uname, age) {
+				this.name = uname;
+				this.age = age;
+				this.sing = function () {
+					console.log("我会唱歌");
+				};
+			}
+			/*
+                new关键字做的事情：
+                1.先创建一个空对象
+                2.再让this指向这个新的对象
+                3.执行对象里面的代码，给这个新对象添加属性和方法
+                4.返回这个对象（所以构造函数里不需要return）
+            
+            */
+			var ldh = new Star("刘德华", 18);
+			var zxy = new Star("张学友", 19);
+			ldh.sing();
+			console.log(ldh);
+		</script>
+	</body>
+</html>
