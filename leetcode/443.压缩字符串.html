@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			"use strict";
+			/**
+			 * @param {character[]} chars
+			 * @return {number}
+			 */
+			let compress = function (chars) {
+				let arr = [];
+				let char;
+				let count = 1;
+				if (chars.length === 1) {
+					return arr.push(...chars);
+				}
+				for (let i = 0; i < chars.length; ) {
+					char = chars[i];
+					arr.push(char);
+
+					for (let j = i + 1; j < chars.length; ) {
+						if (chars[j] === char) {
+							count++;
+							j++;
+							if (j >= chars.length) {
+								arr.push(...("" + count).split(""));
+								i = i + count - 1;
+								break;
+							}
+						} else {
+							if (count > 1) arr.push(...("" + count).split(""));
+							i = i + count - 1;
+							count = 1;
+							break;
+						}
+					}
+					i++;
+				}
+				console.log(arr);
+				return arr.length;
+			};
+
+			console.log(compress(["a", "a", "b", "b", "c", "c", "c"]));
+		</script>
+	</body>
+</html>

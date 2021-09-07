@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			/**
+			 * @param {number[][]} bookings
+			 * @param {number} n
+			 * @return {number[]}
+			 */
+			var corpFlightBookings = function (bookings, n) {
+				let answer = new Array(n).fill(0);
+				for (let j = 0; j < bookings.length; j++) {
+					for (
+						let i = bookings[j][0] - 1;
+						i <= bookings[j][1] - 1;
+						i++
+					) {
+						answer[i] += bookings[j][2];
+					}
+				}
+				return answer;
+			};
+		</script>
+	</body>
+</html>
