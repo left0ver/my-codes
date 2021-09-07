@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			let date = new Date();
+			alert(date);
+			alert(date.getTime()); //获取时间戳
+			alert(date.getTimezoneOffset());
+			let time;
+			time = +date; //时间转化成数字时，会转化成时间戳（一元加)
+			alert(time);
+
+			//Date.now(); //获取当前时间的时间戳，不创建Date对象，性能更好，可以用于时间测量
+			alert(Date.now());
+		</script>
+	</body>
+</html>

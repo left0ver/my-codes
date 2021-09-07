@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function camelize(str) {
+				let arr = str.split("-");
+				let arr1 = arr.map(function (item, index) {
+					if (item !== "") {
+						item =
+							item[0].toUpperCase() +
+							item.substring(1, item.length);
+					}
+					return item;
+				});
+				let str2 = arr1.join("");
+				// let str3 = str2.trim();
+				return str2;
+			}
+			console.log(camelize("-webkit-transition"));
+
+			{
+				function filterRange(arr, a, b) {
+					return arr.filter((item) => item >= a && item <= b);
+				}
+				console.log(filterRange([5, 3, 8, 1], 4, 8));
+			}
+
+			{
+				let arr = [5, 2, 1, -10, 8];
+				console.log(arr.sort((a, b) => b - a));
+			}
+
+			{
+				let john = { name: "John", age: 25 };
+				let pete = { name: "Pete", age: 30 };
+				let mary = { name: "Mary", age: 28 };
+
+				let users = [john, pete, mary];
+
+				let names = users.map((item) => item.name);
+				alert(names); // John, Pete, Mary
+			}
+
+			{
+				let john = { name: "John", surname: "Smith", id: 1 };
+				let pete = { name: "Pete", surname: "Hunt", id: 2 };
+				let mary = { name: "Mary", surname: "Key", id: 3 };
+
+				let users = [john, pete, mary];
+
+				let usersMapped = users.map(function (item) {
+					return {
+						fullName: item.name + " " + item.surname,
+						id: item.id,
+					};
+				});
+				/*
+			usersMapped = [
+			  { fullName: "John Smith", id: 1 },
+			  { fullName: "Pete Hunt", id: 2 },
+			  { fullName: "Mary Key", id: 3 }
+			]
+			*/
+
+				alert(usersMapped[0].id); // 1
+				alert(usersMapped[0].fullName); // John Smith
+			}
+		</script>
+	</body>
+</html>
