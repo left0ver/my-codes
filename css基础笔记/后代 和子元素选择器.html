@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>后代和子元素选择器</title>
+		<style type="text/css">
+			/* 后代选择器
+			 父代加上空格加后代 例如  ul li { } 即可对li设置样式 可以嵌套多层 ，但是儿子，孙子，重孙子都会被选择到*/
+			div ul li {
+					color: red;
+				} 
+				/* 子代选择器，只选择儿子 父选择器加>加上子选择名称 子代选择器可以一直嵌套，  注意：>号左右各保留一个空格*/
+				 .heihei > li {
+					color: red;
+				} 
+				
+		</style>
+	</head>
+	<body>
+		<<!-- div>
+			<ul>
+				<li>王者荣耀</li>
+				<li>王思聪</li>
+			</ul>
+		</div> -->
+		
+			<ul class="heihei">
+				<li class="li"> hhhh
+					<ul>
+						<li>111</li>
+						<li>222</li>
+						<li>333</li>
+					</ul>
+				</li>
+				<li>hhhh
+					<ul>
+						<li>111</li>
+						<li>222</li>
+						<li>333</li>
+					</ul>
+				</li>
+				<li>hhhh
+					<ul>
+						<li>111</li>
+						<li>222</li>
+						<li>333</li>
+					</ul>
+				</li>
+			</ul>
+		
+	</body>
+</html>

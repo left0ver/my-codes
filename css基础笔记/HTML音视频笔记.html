@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>音视频practice</title>
+	</head>
+	<body>
+		<!-- 自己上传视频会消耗大量内存，平时练习时不大适合  可以将自己的视频上传到视频网站，然后点分享，会有HTML链接，复制粘贴过来即可-->
+		<iframe frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=w0034m2xbdf" allowFullScreen="true" height="400"></iframe>
+		
+		
+		<!-- autoplay 属性  是让浏览器自动播放   -->
+		<!-- controls 属性  在浏览器中显示控制音乐的组件 调节音量，进度等 -->
+		<!-- loop  属性  loop就循环播放多少遍 loop="-1"是无限循环播放   -->
+		<h2>不同浏览器播放音频有兼容性问题 一般用MP3文件</h2>
+		<!-- <audio src="星辰大海.mp3 " autoplay="autoplay" controls="controls " loop="2" ></audio> -->
+		
+		<h2>想要兼容不同的浏览器，可以以下这样设置 用source标签</h2>
+		<audio  controls  autoplay  loop="2">
+			<!-- 运用source标签 可以指定多格式音频文件，可以兼容不同的浏览器 -->
+			<source src="星辰大海.mp3"></source>
+			<source src="星辰大海.wav"></source>
+			<source src="星辰大海.ogg"></source>
+			<!-- 如果这些音频文件都不支持  可以提示-->
+			<h2>您的浏览器暂时不支持HTML音频播放功能</h2>
+		</audio>
+		
+		<h2>我们的浏览器只能兼容 MP4 ogg webm 这三种格式的视频</h2>
+		<!-- <video src="测试视频.mp4" autoplay="autoplay" controls="controls"></video> -->
+			
+			<h2>想要兼容不同的浏览器，可以以下这样设置 用source标签</h2>
+			<video autoplay="autoplay"controls="controls" height="300" weight="350">
+				<source src="测试视频.mp4"></source>
+				<source src="测试视频.ogg"></source>
+				<source src="测试视频.webm"></source>
+				<!-- 如果这些视频文件都不支持  可以提示-->
+				<h2>您的浏览器暂时不支持HTML视频播放功能</h2>
+			</video>
+	</body>
+</html>

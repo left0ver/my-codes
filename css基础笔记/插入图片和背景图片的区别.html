@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>插入图片和背景图片的区别</title>
+		<style type="text/css">
+			div :first-child {						/*这里的结构伪类选择器要有一个空格  div ：first-child*/
+				background-color: #008000;
+				width: 300px;					 /* width 和height来设置插入的图片的大小 */
+				height: 200px;
+			}
+			.iii {
+				width: 400px;
+				height: 500px;
+				background-image: url("index_ad1.jpg");
+				background-position: 20px 30px;			/*设置背景图片位置*/
+				background-size: 300px 400px;			/* background-size 来设置背景图片大小*/
+				background-color: #3399CC;			/*一般情况下，背景图片适合做一些小图标，小logo
+														插入图片适合来产品展示*/
+				
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 插入图片是用width和height来改变图片大小 ,img也相当于一个盒子 -->
+		<div >
+			<img src="index_ad2.jpg"  > 
+		</div>								
+		<div class="iii">
+			123
+		</div>
+	</body>
+</html>

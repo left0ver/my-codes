@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>交并集选择器</title>
+		<style type="text/css">
+			/* 交集选择器 */
+			p.red {
+				color: red;
+			}
+			
+			/* 并集选择器 */
+			div, span, p.pink {
+				color: pink;
+			}
+		</style>
+	</head>
+	<body>
+			<!-- 交集选择器 ：
+			写法：一个标签选择器加上.加上类名--  例如 p.red>
+			<!-- 一般id选择器不会这样选，id选择器比较唯一，直接运用即可 -->
+			<p class="red">111</p>
+			<p>222</p>
+			<!-- 并集选择器 各个标签用逗号隔开 例如 p， span， div { }-->
+			<div>333</div>
+			<span>444</span>
+			<p class="pink">555</p>
+			
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>设置背景</title>
+		<style type="text/css">
+			/*div {
+				width: 1187px;
+				height: 1659px;
+				background-color: pink;
+				/* 设置背景图片 */
+				/* background-image: url(杨超越.jpg); */
+				/* 设置背景平铺
+				水平平铺
+				background-repeat: repeat-x;
+				垂直平铺
+				background-repeat: repeat-y;
+				不平铺  即关闭平铺
+				background-repeat: no-repeat;
+				水平和垂直方向平铺
+				background-repeat: repeat;
+			} */
+			.image {
+				width: 900px;
+				height: 400px;
+				background-color: pink; 
+				background-repeat: no-repeat;
+				background-image: url(index_ad1.jpg);
+				/*1. background-position  属性设置背景图片的位置 默认是盒子的左上角 
+				即 left top ;方位名词要设置两个值 ,如下,方位名词如果只设置一个,另一个默认为center*/
+				background-position: left top;
+				
+				/* background-position: center;
+				   background-position: bottom; */ 
+				   
+				   /* 2.可以用精确定位,原点是左上角,默认图片起始是左上角 第一个值是x轴, 图片的左边距离盒子左边的距离  
+				   第二个值是y轴,y轴向下为正  即图片的上面距离盒子的顶部的距离 
+				   background-position: 20px 30px;*/
+				   
+				   
+				  /* 3.可以混搭 即如下
+				   background-position: center 20px;	即水平方向居中 ,垂直方向距离顶部20px
+				   background-position: 20px center;	即垂直方向居中 ,水平方向距离顶部20px */
+				   
+				   /* background-attachment: scroll; 默认是scroll  当你用滚轴往下拉时,背景图片也会随之变化,跟着往下变
+				   ,如果图片不平铺时,则背景图片之后就消失了,因为图片没有那么大 */
+				   background-attachment: fixed;  /*设置背景固定,即当你用滚轴往下拉时,背景图片依旧一直固定不变*/
+				   
+				   
+				  /* 背景的简写模式:没有强制要求按什么顺序写,但是可以这样写 背景颜色,背景图片,是否平铺,背景是否固定(fixed or scroll) ,
+				  背景位置 position  每个值用空格隔开
+				   如下:
+				   background:  red url(index_ad1.jpg) no-repeat fixed center 20px; */
+				   
+				   
+				   /* 设置背景图片的宽度和高度,类似于用img标签插入图片时给图片设置width 和height 属性;
+				   前面的是宽度,后面的是高度   ,但是一般都只设置一个值,防止失真*/
+				   background-size: 700px 300px; 
+				   
+				   
+				   /* 背景图片按比例缩放,如下面就是将图片缩放为原来的10%
+				   background-size: 10%; */
+				   
+				   /* 背景图片等比例缩放,一定保证图片填满盒子,但是可能会溢出,溢出的部分会被隐藏  这个用的多一点
+				   background-size: cover; */
+				   
+				   /* 背景图片等比例缩放,直到缩放不了了,即当图片快要溢出的那个位置,一定会保证图片完整地显示
+				   background-size: contain;
+				   */
+				  
+				  /* 多背景图片 
+				  可以在一个div中设置多张背景图片  
+				  每组图片用逗号,隔开   
+				  如果设置的多个图片存在重叠,则前面的而图片会后面的背景图之上
+				  为了避免背景颜色将图像盖住,通常将背景颜色定义在最后一组图片上
+				  例如如下定义:
+				  background:url(#1) no-repeat fixed center left,
+				   url(#2) no-repeat fixed center right,
+				   url(#0) no-repeat fixed center center red;*/
+				  
+			}
+			
+			.shadow {
+				width: 300px;
+				height: 200px;
+				/* 背景半透明 可以参考王者荣耀官网，一般是嵌套在一个盒子上使用 与颜色半透明类似 如下：*/
+				background: rgba(0,0,0,0.5);
+			}
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="image">
+			
+		</div>
+		
+	</body>
+</html>

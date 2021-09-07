@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>css3盒模型</title>
+		<style type="text/css">
+			div:first-child {
+				width: 300px;
+				height: 200px;
+				background-color: #3399CC;
+				padding: 30px;				/* w3c以前得标准是box-sizing: content-box (默认的);加入padding和border会撑开盒子
+											下面这种更好用
+											box-sizing: border-box是css3新增的,让盒子的width和height就是盒子的大小,padding和border不会撑开盒子 */
+				box-sizing: border-box;
+			}
+			div:nth-child(2) {
+				width: 200px;
+				height: 100px;
+				background-color: #800080;
+				padding: 20px;
+				box-sizing: content-box;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+	</body>
+</html>

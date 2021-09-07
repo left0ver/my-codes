@@ -1,0 +1,307 @@
+<!DOCTYPE html  >
+<!DOCTYPE html>
+<html>
+<head>
+	<title>html测试</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<!-- 定义短的引用-->
+<p id="top">WWF's goal is to: 
+<q>Build a future where people live in harmony with nature.</q>
+We hope they succeed.</p>
+
+<!--定义下划线文本 -->
+<u>下划线文本</u>
+
+<!-- 定义斜体文本-->
+<br>
+<i>斜体文本</i>
+
+<!-- 定义强调文本和小号文本-->
+<br>
+<strong>强调文本</strong>
+<small>小号文本</small>
+
+<!--定义下标文本 上标文本 -->
+<br>
+h<sub>2</sub>o
+<br>
+x<sup>y</sup>
+
+<!--定义一个时间 -->
+<br>
+现在是<time>21:00</time>  <br>
+
+<!--定义下划线文本 -->
+<u>下划线文本</u><br>
+
+
+<!--表单标签-->
+<form>
+	<button type="button" onclick="alert('你好，世界')">点我</button>
+	<br>
+	<!--下拉列表 -->
+	<select>
+		<option value="beijing">北京</option>
+		<option value="shanghai">上海</option>
+		<option value="guangzhou">广州</option>
+	</select>
+
+	<br>
+	<!--下拉列表分组 -->
+	<!-- size 即一开始默认显示前n个 -->
+<select size="3">
+	<optgroup label="city">
+		<option value="beijing">北京</option>
+		<option value="shanghai">上海</option>
+		<option value="guangzhou" selected>广州</option> <!--用selected属性来设置默认选项-->
+	</optgroup>
+	<optgroup label="river">
+		<option value="huanghe">黄河</option>
+		<option value="qingjianghe">琴江河</option>
+		<option value="changjiang">长江</option>
+	</optgroup>
+</select><br>
+
+	<!--定义围绕表单元素的边框 -->
+<fieldset style="width: 100 ">
+	<legend>文本框</legend>
+	文本框1<input type="text" name="111" autofocus><br>
+	文本框2<input type="text" name="222"><br>
+</fieldset>
+
+<!--内联框架   一个内联框架被用来在当前 HTML 文档中嵌入另一个文档-->
+<iframe src="//www.baidu.com">hello htlm</iframe> 
+</form>
+<!-- th标签，定义表头单元格 // 第一行单元格颜色更深-->
+<!-- dialog标签 ，定义一个对话框 但是IE/edge浏览器不支持-->
+<!-- caption标签，定义表格的标题 可以配合span标签使用-->
+<!-- thead标签，定义表格表头 tfoot标签定义表格的页脚，tbody标签定义表格的主体部分 -->
+<table border="1"> 
+	<caption><span style="color: red ">月份表格</span></caption>
+	<thead>
+	<tr>
+		<th>1月<dialog>这是一个windows对话框</dialog></th>
+		<th>2月</th>
+		<th>4月</th>
+	</tr>
+</thead>
+<tfoot>
+	<tr>
+		<td>闰年</td>
+		<td>闰年</td>
+		<td>闰年</td>
+	</tr>
+</tfoot>
+<tbody>
+	<tr>
+		<td>31</td>
+		<td>28</td>
+		<td>30</td>
+	</tr>
+</tbody>
+</table>
+
+<!-- cellpadding 用于设置单元格边缘与单元格内容之间的空白的距离      cellspacing 用与设置单元格直接的空白距离-->
+<!-- colgroup 标签用于对表格中的列进行组合，以便对其进行格式化,一般配合col一起使用-->
+<!-- colspan 用于水平方向合并单元格  rowspan用于垂直方向合并单元格-->
+<!-- caption  定义表格标题 -->
+<table align="center" border="1" cellpadding="5" cellspacing="5" >
+	
+	<colgroup>
+		<col span="2" style="background-color:red">
+		<col style="background-color: blue">
+	</colgroup>
+	
+	<tr>
+		<td rowspan="2">China</td>
+		<td width="100">American</td>
+		<td>Japan</td>
+	</tr>
+
+
+	<tr>
+		<td colspan="2">上海</td>
+		<td>广州</td>
+		<td>华盛顿</td>
+	</tr>
+
+	
+</table>
+
+<hr/>
+<!-- 无序列表 -->
+<!-- 有三种形式  pointer circle 和 square-->
+<ul type="square">
+	<li>jg</li>
+	<li>jg</li>
+</ul>
+
+<!-- 图像标签  -->
+<!-- title 当你鼠标停在图片上是，会显示title的内容 -->
+<!-- alt  图像不显示时替换的文本 -->
+<!-- border  border的值为1时，图像有边框，为0时无边框 -->
+<img src="杨超越.jpg" title="这是我的女神" height="200" width="150" border="1" alt="请连接网络,图像显示不了"/>
+
+
+<!-- 表单控件 -->
+<!--  -->
+<strong>用户反馈</strong>
+<br />
+<hr />
+<form action="http://www.baidu.com/" target="_blank" method="post" >
+	<!-- fieldset 标签 用于给表单控件加边框，有利于分组 -->
+	<!-- legend 标签 在边框上加标题 -->
+	<fieldset>
+		<legend>用户反馈</legend>
+			
+				<!-- text 文本框 -->
+				<!-- required 属性  可以在文本框未输入数据就提交时，提示用户文本框不能为空 -->
+				<!-- placeholder属性 可以预设值文本框未输入数据时显示的内容 用户输入数据时会自动消失  起到提示作用 -->
+				<!-- label 标签的作用 ：用于绑定一个表单元素, 当点击label标签的时候, 被绑定的表单元素就会获得输入焦点。 -->
+				<!-- 第一种用法就是用label标签直接包含input表单， 适合单个表单选择
+						第二种用法 for 属性规定 label 与哪个表单元素绑定(通过id)。 -->
+						<!-- autofocus 属性 当页面加载时会自动获得焦点，即鼠标不用点击也可以在文本框输入数据  百度的搜索框就是这样 -->
+				<label for="username">1.您常用的账号名是？</label>	
+				<input type="text" id="username" 
+				  required="required" placeholder="请输入您的账号" autofocus="autofocus"/>
+			
+			<br />
+			<!-- tel 用于定义输入电话号码的字段 -->
+			<!-- placeholder 属性 用于文本框等输入框时 提示用户要输入的信息  比用value属性更好 
+			用户输入信息的时候该文字会自动消失  是HTML5新增的 -->
+			 
+			<label>
+				2.您常用的电话号码是?<input type="tel" name="tel" "  placeholder="请输入电话号码"/>
+			</label>
+			<br />
+			<!-- radio  单选框组件 -->
+			<label>
+				3.您对目前当当网首页的整体满意度如何？<br />
+				<input type="radio" name="satisfaction"  />满意<br />
+				<input type="radio" name="satisfaction"  />一般<br />
+				<input type="radio" name="satisfaction"  />不满意<br />
+			</label>
+			<!-- textarea标签 ：文本域组件  可以设置行数和列数-->
+			<label>
+				4.您的意见与建议？<br />
+				<textarea rows="6" cols="20" placeholder="请输入您的意见">
+				</textarea>
+			</label>
+			<br />
+			
+			<!-- select 下拉框组件 与option配合使用  -->
+			<!-- size属性 默认为1  size=2时，默认一开始显示2个 -->
+			<label>
+				5.你住在哪个城市？
+				<select name="city">
+					<option >北京</option>
+					<option >上海</option>
+				</select>
+				
+			</label>
+			<br />
+			
+			<!--select 下拉框 用optgroup标签来让某几个为一组  -->
+			
+				6.你在这里最喜欢买什么商品？<br />
+				<select size="8">
+					<optgroup label="食品类">
+						
+						<option value="ganguo">干果</option>
+						<option value="mianbao">面包</option>
+						<option value="shengxian">生鲜</option>
+						<option value="jiu">酒</option>
+					</optgroup>
+					<optgroup label="服装类">
+						
+						<option value="nanzhuang">男装</option>
+						<option value="nvzhuang">女装</option>
+					</optgroup>
+				</select>
+				<label>
+					<p>
+						<!-- file组件 文件上传 可以上传文件 -->
+						<!-- multiple 属性 HTML5新增的  上传文件时按住ctrl键可以上传多个文件  没加则只能上传一个-->
+						7.上传你的头像？<input type="file" name="photo" value="photo" multiple />
+					</p>
+				</label>
+				
+				<!-- email组件是HTML5新增的 ，让用户按邮件格式输入 -->
+				<label>
+					请输入邮箱：<input type="email"  />
+				</label>
+				<br />
+				<!-- number组件是HTML5新增的，让用户只能输入数字，输入其他的不会显示在上面 -->
+				<label>
+					请输入数字：<input type="number"  />
+				</label>
+				
+				<br />
+				<!--url组件是HTML5新增的，用户只能输入网址  -->
+				<label>
+					请输入网址：<input type="url"  />
+				</label>
+				
+				<!-- search 和range组件都是HTML5新增的，search是搜索框，用于搜索， -->
+				<!-- range是滑块，可以用来控制音量 -->
+				<p>
+					<label>
+						搜索框：<input type="search" /><br />
+						滑块：<input type="range" />
+					</label>
+				</p>
+				<!-- submit组件 提交组件 可以在form那里设置提交之后跳转的页面target    提交方式method-->
+				<label>
+					<p>
+						<input type="submit" name="submit"value="提交" />
+						<input  type="reset"name="reset" value="重置"/>
+					</p>
+				</label>
+				
+				
+	</fieldset>
+</form>
+
+<p>
+	<form >
+		<!-- autocomplete 属性 浏览器会记录你填过的数据，下次填的时候输入相同数据时更方便，例如填身份证号的时候 -->
+		<!-- autocomplete 有2个值 一个是"on" 一个是"off" -->
+		<!-- 1.使用时要有提交按钮，要提交过了之后才会记录  2.使用的哪个表单要有name 属性 -->
+		<!-- accesskey属性 快捷键获得焦点 即用alt+自己设置的那个键来获得某个表单控件的焦点  不能与浏览器的快捷键冲突 -->
+		<input type="text" name="username2" placeholder="请输入用户名" autocomplete="on" accesskey="s"/><br />
+		<input type="submit" value="提交" />
+	</form>
+</p>
+
+
+<!-- 锚点链接 -->
+<!-- 通过创建锚点链接，用户能够快速定位到目标内容。 -->
+<!-- 先创建文本，注明id号 之后再在链接上加上#和id号即可 -->
+<h3 id="baidu">百度</h3>
+<a href="http://baidu.com/#baidu">访问百度</a>
+
+
+<!-- datalist标签 类似于百度搜索东西时，输入一个值，会弹出与这个值相关的内容  用list 和id建立起连接来-->
+<input type="text"  list="star" value="请输入明星" />
+<datalist id="star">
+	<option>刘德华</option>
+	<option>张文超</option>
+	<option>刘旺</option>
+</datalist>
+<!-- HTML5 ，时间的组件  有些浏览器上显示不出来   -->
+<p >
+	小时分钟<input type="time" /><br />		<!-- 选择几点几分 -->
+	年月日<input type="date" /><br />		<!-- 选择年月日 -->	
+	时间<input type="datetime" /><br />		<!-- 填写时间 -->
+	年月<input type="month" /><br />			<!-- 选择哪一年哪个月 -->
+	年周<input type="week" /><br />			<!-- 选择哪一年第几周-->
+</p>
+<!-- 锚点链接 -->
+<a href="#top"> 跳转到顶部</a>
+<br />
+<br>
+
+</body>
+</html>

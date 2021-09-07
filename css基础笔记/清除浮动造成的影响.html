@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>清除浮动造成的影响</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.father {
+				width: 300px;
+										/*很多情况下父亲盒子是不设置高度的，由孩子盒子的高度决定，
+										但是这种情况下如果孩子盒子浮动的话，下面的盒子就会跑上来，重叠到一起，这就是浮动造成的影响
+										为了解决这种问题，我们要清除浮动*/
+											/* 方法一:在浮动盒子的后面添加一个盒子,然后在css样式中输入,
+											clear属性,left(清除左浮动),right(清除右浮动),both(清除左右浮动),大部分情况用both
+											但是这种方法不好,添加许多无意义的标签,结构化较差 */
+				overflow: hidden;			
+											/* 方法二:给父亲元素的样式添加overflow属性,通过触发bfc的方式清除浮动
+												overflow的3个值都可以清除浮动,hidden,scroll,auto 
+												缺点：内容增多的时候容易造成不会自动换行导致内容被隐藏掉，无法显示溢出的元素*/
+			}								
+											/* 方法三:使用:after伪元素清除浮动;为父元素添加类名clearfix(类名可以随便写) */
+			.clearfix:after {
+											content: ".";		/* 内容为小点,尽量加,不要空,否则旧版本浏览器会有空隙 */
+											display: block;		/* 转化为块状元素 */
+											height: 0;			/* 将盒子高度设置为0 */
+											visibility: hidden;	/* 隐藏盒子 */
+											clear: both;		/* 清除浮动 */
+										/* 	再加上下面的话 */
+			}						
+					.clearfix {					/*因为ie6 7 不支持:after,使用zoom: 1; 触发hasLayout*/
+								*zoom: 1;		/* *代表ie 6.7能识别的符号,带有这个符号属性,只有ie6.7才执行 */
+													/* zoom就是ie6 7清除浮动的方法 */
+					}
+												
+												/* 第四种方法:双伪元素清除浮动:
+												.clearfix::before,.clearfix::after {
+													content: "";
+													display: table;
+												}
+												.clearfix::after{
+													clear: both;
+												}
+												.clearfix {
+													*zoom: 1;
+												}   */
+												/* 总结:第三种和第四种方法都可以 ，尽量用第三第四种*/
+			 
+			.son1 {							
+				width: 75px;
+				height: 75px;
+				background-color: #008000;
+				float: left;
+			}
+			.son2 {
+				width: 120px;
+				height: 75px;
+				background-color: #3399CC;
+				float: left;
+			}
+			.last {
+				width: 200px;
+				height: 100px;
+				background-color: red;
+			}
+			.clear {
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="father clearfix">
+			<div class="son1"></div>
+			<div class="son2"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="last"></div>
+	</body>
+</html>

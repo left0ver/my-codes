@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>外边距，内边距</title>
+		<style type="text/css">
+			* {				/*清除内外边距，body是会默认有外边距的*/
+										/* 注意:行内元素没有上下内边距,以后不要给行内元素添加上下内边距  添加左右内边距即可*/
+				margin: 0px;
+				padding: 0px;
+			}
+			.jjf {
+				width: 200px;
+				height: 300px;					/* margin:盒子的外边距 */
+				margin: 50px auto;			/*给一个盒子水平居中：需要设置宽度，然后margin:20px auto; */
+				margin: 10px 20px 30px 40px;	/*margin的值是按上右下左的顺序来的*/
+				background-color: #FF0000;
+				padding: 20px 30px;				/*两个值是上下内边距20px 左右内边距30px*/
+											/*padding: 10px 20px 30px;上内边距10px 左右内边距20px 下内边距30px */
+											/* padding: 10px 20px 30px 40px; 分别对应上右下左内边距 */
+											
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="jjf">
+				<div>
+					123456
+				</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>边框</title>
+		<style type="text/css">
+			.12222 {
+				/*虚线边框
+				border-style: dashed;*/
+				/* 实线边框 */
+				border-style: solid;
+				/*设置边框的厚度*/
+				border-width: 1px;
+				/* 设置边框的颜色 */
+				border-color: #FF0000;
+				
+				/* 综合写法： 无顺序		综合写法用的多，简洁
+				 border: red solid 1px*/
+				 
+				/* 也可以对某一条边框设置,例如
+				 border-top: #000000 solid 1px; */
+			}
+			/*设置圆角边框*/
+			div {
+				width: 400px;
+				height: 200px;
+				border: #FF0000 solid 1px;
+			}
+			div:first-child {
+				border-radius: 50%;
+			}
+			div:nth-child(2) {
+				border-radius: 200px 200px 0 0;			/*半圆 将div的宽度设为高度的2倍，再将第一个参数和第二个参数设置为宽度的一半*/
+			}
+			div:nth-child(3) {
+				 width: 200px; 
+				border-radius: 0px 0px 200px 0px;		/*1/4个圆 div的宽度和高度相等时，将4个参数里的一个参数设置为宽度或高度的一半即可*/	
+			}
+			
+			div:nth-child(4) {
+				 width: 200px; 								/*一个类似核桃的东西 ，div的width和height相等时  
+																将第一个和第三个参数都设置成宽度或高度的长度*/
+				border-radius: 200px 0px 200px 0px;	
+				}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div class="12222">12222</div>
+	</body>
+</html>

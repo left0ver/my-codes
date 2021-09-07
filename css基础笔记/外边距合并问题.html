@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>外边距合并问题</title>
+		<style type="text/css">
+				.farther {
+					width: 300px;
+					height: 200px;
+					background-color: pink;
+					
+				}
+				.son {
+					height: 100px;
+					width: 200px;
+					background-color: #800080;
+												/* 这时候如果给里面的盒子一个上外边距,margin-top: 30px;盒子会发生塌陷 
+												即:里面的盒子并没有30px的外边距,大盒子有30px的外边距
+												这种情况工作中经常遇到,解决方法:
+												1.给父元素加上上边框border-top或者上内边距 padding-top
+												2.可以为父元素添加overflow:hidden */
+				
+				}
+				div:nth-child(2) {
+					width: 250px;
+					height: 200px;
+					background-color: green;
+					margin-bottom: 50px;				/*上面的盒子设置一个底部的外边距，下面的盒子设置一个顶部的外边距
+														则两个外边距会合并，以最大的为准，以后尽量避免这种情况的发生*/
+				}
+				div:nth-child(3) {
+					width: 400px;
+					height: 200px;
+					background-color: #FF0000;
+					margin-top: 100px;
+				}
+				div:nth-child(4) {
+					width: 200px;
+					height: 100px;
+					background-color: #0000FF;
+					padding: 30px;	
+									border: 3px solid green;/* 盒子的实际宽度等于width+padding-left+padding-right+border*2 */
+				}
+				
+				p {
+					height: 50px;
+					padding-left: 30px;		/*当一个盒子没有设置宽度或者高度，或者继承父亲的宽度高度，则给他设置padding不会改变盒子的实际大小*/
+				}
+		</style>
+	</head>
+	<body>
+		<div class="farther">
+			<div class="son">
+				
+			</div>
+		</div>
+		<div>123</div>
+		<div>456</div>
+		<div>
+			<p>奔跑吧</p>
+		</div>
+	</body>
+</html>

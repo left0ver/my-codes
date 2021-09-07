@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>定位</title>
+		<style type="text/css">
+			#father {
+				width: 100px;
+				height: 100px;
+				background-color: #800080;		/* 定位:定位模式: static(不加就默认的),静态定位,即标准流的位置,
+												对于边偏移无效,一般用它来清除定位,一个有定位的盒子,不想加定位了,就写这句话 position:static */
+											/* position: relative(相对定位)
+											1.相对定位最重要的一点,即它可以通过边偏移来移动位置,但是原来所占有的位置继续占有
+											2.每次移动的位置,都是相对以自己的左上角为基点来移动的 (相对于自己来移动位置)，
+											相对定位的盒子仍在标准流中，后面的盒子仍以标准流的形式来对待他*/
+												
+									/* position: absolute;(绝对定位),以父级盒子来定位的,如果父级盒子有定位(绝对定位,相对定位,固定定位)
+									(静态定位不算),则以离他最近的有定位的父级盒子来定位, 如果他的父级盒子都没有定位,
+									则以浏览器来进行定位(他是以自己盒子的外边距为盒子的最外边来进行定位的)		 */
+									/* 注意:在一般布局中,如果子级要用绝对定位,则父盒子一般用相对定位  以后经常用到*/
+									
+									
+									/* position: fixed;(固定定位),以浏览器为基准进行定位的,和父亲盒子没有任何关系,脱离标准流的,飘起来的 */
+									/*做最上面的固定的导航栏时,给他加了绝对定位,脱离了标准流,下面的盒子就浮上去了,
+									可以给他加个margin-bottom 或者给下面的盒子加个margin-top*/
+									
+								/* 	z-index: 2(无单位);可以给盒子设置叠加的次序,数字越大就在越上面 ，默认属性是0 
+								只有给了相对定位，绝对定位，固定定位的盒子有此属性，其余标准流盒子没有*/
+								
+								/* 跟浮动一样,给盒子添加了绝对定位和固定定位之后会发生模式的转换,转换为行内块模式 */
+				position: relative;							
+				top: 100px;
+				left: 100px; 
+				margin: 100px;
+				z-index: 1;
+			}
+			#son {
+				height: 50px;
+				width: 50px;
+				background-color: #00A4FF;
+				position: absolute;
+				top: 30px;
+				left: 20px;
+				margin: 20px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="father">
+			<div id="son">
+				
+			</div>
+		</div>
+		
+	</body>
+</html>

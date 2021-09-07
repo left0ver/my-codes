@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>隐藏和显示元素</title>
+		<style type="text/css">
+		div {
+			height: 100px;
+			width: 100px;
+			margin: 0 auto;
+			line-height: 100px;
+			text-align: center;
+			background-color: #3399CC;
+			position: relative;
+		}
+		div img {
+			display: none;
+			position: absolute;
+			left: 100px;
+			top: 0;
+		}
+		div:hover img{
+			display: block;
+		}
+			
+											/* display: none隐藏元素  display:block(不仅能让元素转换为块状元素,还能显示元素) 
+											 display隐藏了元素之后将不再占位置
+											 
+											 visibility: hidden;隐藏元素,但是隐藏了之后还占位置,只是元素看不见了
+											 visibility: visible;显示元素 
+											 
+											 display: 用的多一点;*/
+					
+			
+			
+		</style>
+	</head>
+	<body>
+	
+		<div>
+			扫这个二维码
+			<img src="../img/二维码.jpg" width="100px" height="100px" >
+		</div>
+	</body>
+</html>

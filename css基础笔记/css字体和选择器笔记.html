@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>practice</title>
+		<!-- font-family设置字体 浏览器默认微软雅黑  font-size 设置字号 浏览器中默认的16px 一般文章是14px 建议使用偶数 ，IE6等老式浏览器支持奇数，会有bug -->
+		<!-- font-family可以设置多个字体，各个字体间用逗号隔开 ，览器会先选择浏第一个字体，若你的浏览器没有，则选择第二个，以此类推，如果都没有，则使用浏览器自带的字体-->
+		<!-- 中文字体要加引号，一个单词的英文字体不要加引号，有 空格 #，$的英文字体要加引号 -->
+		<!-- 设置英文字体时，英文字体要在中文字体前面 -->
+		<style>
+		.lei2 {
+				/* 设置字体时最好用unicode 可以更好兼容浏览器*/
+			 color: red; text-align: center; font-family:"microsoft yahei","宋体";
+			/* font-weight 设置字体粗细 一般用数字 400=normal   700=bold*/
+			 font-weight: 400;
+			 /* font-style 可以设置字体是否倾斜 倾斜：italic ，正常:normal  一般不会将字体设置为倾斜 反而让 em i 标签变为普通模式*/
+			 font-style: italic;
+		}	
+		
+		span {
+			color: #FF0000;
+			 /* font的综合写法，更简洁，提倡这种
+			 必须按font-style font-weight font-size/line-height  font-family顺序写，否则不起作用 
+			 font-style 和font-weight为默认值时可以不写 ，font-size和font-family一定要写*/
+			font: italic bold 17px "宋体";
+		}
+		
+		.lei1{
+			/* 类选择器用英文写，别用中文和数字
+			 不建议用下划线来命名类选择器，用-    最好见名知意*/
+			
+			font:  italic 18px "微软雅黑";		/* 可以多类名选择器*/
+		}
+		.orange{
+			color: orange;
+		}
+		
+		#red {
+			color: red;
+		}
+		.pink {
+			color: pink;
+		}
+		* {  /* 通配符选择器，作用于全局，一般很少用，有时会用来清除HTML样式的边距*/
+			margin: 0;
+			padding: 0;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<p class="lei2" >
+			hello World!~~
+		</p>
+		
+		<span>font的综合写法</span>
+		<p class="lei1 orange">类选择器</p>
+		
+		
+		<!-- id选择器和类选择器的区别    
+		 id选择器只能使用一次，类选择器可以重复使用-->
+			<p id="red">三国演义</p>
+			<p class="pink">水铺砖</p>
+			<p class="pink">西游记</p>
+			<p>红楼梦</p>
+	</body>
+</html>

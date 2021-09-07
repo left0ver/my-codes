@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>显示模式转换</title>
+	</head>
+	<body>
+			<!-- 行内标签  转换为块状标签  不能设置高和宽度   之后的东西会出现在其后面-->
+			<span style="display: block;color: red;" >哈哈哈哈</span>
+			<!-- 块状标签  转换为行内标签 可以设置高和宽度 之后的东西会出现在下面-->
+			<div style="display: inline; width: 300px; height: 300px;"> 哈哈哈 </div>
+			<!-- 块状标签转换为行内块标签  可以设置高和宽度  但是之后的东西会出现在后面  img input td 标签是典型的行内块标签-->
+			<div style="display: inline-block; width: 200px;height: 6.25rem;">嘿嘿嘿</div>
+			<div  style="display: inline-block;width: 200px;height: 6.25rem;" >哈哈哈哈</div>
+		
+	</body>
+</html>

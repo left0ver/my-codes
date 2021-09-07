@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>结构伪类选择器</title>
+		<style>
+			li:first-child {			/*选择第一个孩子*/
+				color: #FF0000;
+			}
+			li:last-child {				/*选择最后一个孩子*/
+				color: #FFA500;
+			}
+			li:nth-child(even) {
+				color:purple;		/* nth-child(even)  选择父元素的第2n个子元素 括号里面可以写公式 例如2n+1，也可以写数字 1 2 3...
+											奇数的元素可以写odd  偶数的元素写even*/
+			}
+			li:nth-last-child (){
+				color:green;		/* nth-last-child() 和nth-child不一样的是 ,这个是将最后一个元素当成第一个元素,从最后面一个元素开始数 */
+			}
+			:target {				/* :target 目标伪类选择器 target:目标  选择器可用于选取当前活动的目标元素 */
+										/* 例如使用锚点链接时 ,使用了该选择器，当你点击链接文字跳转时,目标文字就会发生改变 */
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="#movie">演艺经历</a>
+		<ul>
+			<li>第一个孩子</li>
+			<li>第二个孩子</li>
+			<li>第三个孩子</li>
+			<li>第四个孩子</li>
+			<li>第五个孩子</li>
+			<li>第六个孩子</li>
+			<li>第七个孩子</li>
+		</ul>
+		<hr />
+		<span id="movie">
+			演艺经历
+		</span>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
